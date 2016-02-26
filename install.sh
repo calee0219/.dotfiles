@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install tmux.conf
-ln -fs ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln -fs ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
 sudo yum install cmake
 sudo pip install psutil
