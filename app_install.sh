@@ -4,6 +4,7 @@
 yum install git
 yum install tmux
 yum install irssi
+yum install fish
 
 # editor
 yum install vim

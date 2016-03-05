@@ -31,4 +31,4 @@ ln -fs ~/.dotfiles/vim ~/.vim
 ln -fs ~/.vim/vimrc ~/.vimrc
 
 #install .config/fish
-ln -fs ~/.dotfiles/fish ~/.config/fish
+ln -fs ~/.dotfiles/fish ~/.config/fish/functions
