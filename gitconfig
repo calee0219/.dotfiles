@@ -1,0 +1,25 @@
+[user]
+	email = sz110010@gmail.com
+	name = Gavin Lee
+[color]
+	ui = true
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	editor = vim
+[alias]
+	ap = add --patch
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	dc = diff --cached
+	ds = diff --stat
+	dcs = diff --cached --stat
+	tree = log --oneline --decorate --graph
+	shows = show --stat
+	showns = show --name-status
+	logs = log --pretty=oneline --abbrev-commit
+	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --

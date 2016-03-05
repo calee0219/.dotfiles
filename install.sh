@@ -16,3 +16,6 @@ ln -fs ~/.dotfiles/screenrc ~/.screenrc
 
 #install bashrc
 ln -fs ~/.dotfiles/bashrc ~/.bashrc
+
+#inctall gitconfig
+ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
