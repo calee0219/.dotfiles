@@ -2,9 +2,15 @@
 
 #install tmux.conf
 ln -fs ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+sudo apt-get install gcc python-dev
+sudo yum install gcc python-devel
+python setup.py install
+pip install psutil
+cd ~/.dotfiles/tmux
+git submodule init
+git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
 sudo yum install cmake
-sudo pip install psutil
 cmake .
 make
 sudo make install clean
@@ -21,4 +27,8 @@ ln -fs ~/.dotfiles/bashrc ~/.bashrc
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
 #install vimrc
-ln -fs ~/.dotfiles/vimrc ~/.vimrc
+ln -fs ~/.dotfiles/vim ~/.vim
+ln -fs ~/.vim/vimrc ~/.vimrc
+
+#install .config/fish
+ln -fs ~/.dotfiles/fish ~/.config/fish
