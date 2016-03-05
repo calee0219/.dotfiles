@@ -29,6 +29,9 @@ ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 #install vimrc
 ln -fs ~/.dotfiles/vim ~/.vim
 ln -fs ~/.vim/vimrc ~/.vimrc
+rm ~/.vim/vim
 
 #install .config/fish
-ln -fs ~/.dotfiles/fish ~/.config/fish/functions
+fish
+ln -s ~/.dotfiles/fish ~/.config/fish/functions
+rm ~/.dotfiles/fish/fish
