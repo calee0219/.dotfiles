@@ -61,8 +61,6 @@ setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap <F4> :set nonumber!<CR>
 
 " 套件
-" To auto run .vim/bundle
-call pathogen#infect()
 " 設定 NERDTree 視窗大小
 let g:NERDTreeWinSize = 20
 " 設定 \ + n 打開 NERDTree
