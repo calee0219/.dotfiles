@@ -23,3 +23,5 @@
 	showns = show --name-status
 	logs = log --pretty=oneline --abbrev-commit
 	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[diff]
+	tool = vimdiff
