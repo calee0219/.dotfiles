@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# git submodule
+cd ~/.dotfiles
+git submodule init
+git submodule update
+
 # install tmux.conf
 ln -fs ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 #ln -fs ~/.dotfiles/tmux ~/.tmux
