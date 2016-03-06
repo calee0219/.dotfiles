@@ -25,6 +25,9 @@ chmod u+x install_chrome.sh
 ./install_chrome.sh
 rm install_chrome.sh
 
+# developer
+yum install ctags
+
 # command
 echo "#!/bin/sh
 
