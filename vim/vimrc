@@ -1,4 +1,4 @@
 source ~/.dotfiles/vim/vimrcs/vundle.vimrc
 source ~/.dotfiles/vim/vimrcs/display.vimrc
 source ~/.dotfiles/vim/vimrcs/title.vimrc
-source ~/.dotfiles/vim/vimrcs/command.vimrc
+source ~/.dotfiles/vim/vimrcs/mapping.vimrc
