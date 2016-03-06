@@ -47,7 +47,7 @@ set softtabstop=4
 " How long when press tab
 set shiftwidth=4
 " Change tap to space
-"set expandtab
+set expandtab
 " 折疊
 set foldenable
 set foldmethod=syntax
