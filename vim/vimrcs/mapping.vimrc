@@ -1,4 +1,6 @@
 " All mode
+" mapping <leader>
+"let mapleader = ","
 " 設定滑鼠能用
 set mouse=nvi
 
@@ -11,6 +13,8 @@ nnoremap <F4> :set nonumber!<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " for auto clean the formate
 nnoremap atft ggVG=
+" Open Tagbar
+nnoremap <F8> :TagbarToggle<CR>
 
 " Insert mode
 

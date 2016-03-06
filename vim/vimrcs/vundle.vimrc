@@ -11,16 +11,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Add vulndle plugin here!!!
-Plugin 'Valloric/YouCompleteMe'         " This is for auto complete
-Plugin 'scrooloose/nerdtree'            " This is for NERDtree
-Plugin 'scrooloose/nerdcommenter'       " This is for section comment
-Plugin 'tpope/vim-fugitive'             " This is for git in vim
-Plugin 'tpope/vim-surround'             " This is for change brackets
-Plugin 'scrooloose/syntastic'           " This is for syntax checking
-Plugin 'kien/ctrlp.vim'                 " This is for keyword searching
-Plugin 'ervandew/supertab'              " This is for using <Tab> for all your insert completion needs
-Plugin 'jiangmiao/auto-pairs'           " This is for auto complete brackets
-"Plugin 'cohama/lexima.vim'             " This is for auto complete brackets
+" plugin on GitHub repo
+Plugin 'Valloric/YouCompleteMe'             " This is for auto complete
+Plugin 'scrooloose/nerdtree'                " This is for NERDtree
+Plugin 'scrooloose/nerdcommenter'           " This is for section comment
+Plugin 'tpope/vim-fugitive'                 " This is for git in vim
+Plugin 'tpope/vim-surround'                 " This is for change brackets
+Plugin 'scrooloose/syntastic'               " This is for syntax checking
+Plugin 'kien/ctrlp.vim'                     " This is for keyword searching
+Plugin 'ervandew/supertab'                  " This is for using <Tab> for all your insert completion needs
+Plugin 'jiangmiao/auto-pairs'               " This is for auto complete brackets
+"Plugin 'cohama/lexima.vim'                 " This is for auto complete brackets
+"Plugin 'fisadev/fisa-vim-config'           " This is for vim python IDE
+Plugin 'vim-airline/vim-airline'            " This is for awesome outlook
+Plugin 'vim-airline/vim-airline-themes'     " This is for awesome outlook
+Plugin 'altercation/vim-colors-solarized'   " This is for better syntax
+Plugin 'majutsushi/tagbar'                  " This is for an easy way to browse the tags
+Plugin 'tomtom/tlib_vim'                    " This is for utility vim functions
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
