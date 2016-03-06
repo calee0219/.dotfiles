@@ -1,4 +1,4 @@
-" ~/.dotfiles/vim/vimrcs/my.vimrc
+" ~/.dotfiles/vim/vimrcs/display.vimrc
 " This is my vimrc
 "
 "
@@ -72,3 +72,12 @@ let g:NERDTreeWinSize = 20
 " vim-airline
 " display it
 let g:airline#extensions#tabline#enabled = 1
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

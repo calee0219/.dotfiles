@@ -1,4 +1,4 @@
-" ~/.vim/vimrcs/append/tital
+" ~/.dotfiles/vim/vimrcs/tital.vimrc
 
 
 

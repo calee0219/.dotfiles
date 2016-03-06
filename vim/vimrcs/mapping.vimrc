@@ -1,3 +1,8 @@
+" ~/.dotfiles/vim/vimrcs/mapping.vimrc
+" This is my vimrc
+"
+"
+"
 " All mode
 " mapping <leader>
 "let mapleader = ","
