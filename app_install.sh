@@ -26,5 +26,13 @@ chmod u+x install_chrome.sh
 rm install_chrome.sh
 
 # command
-echo '#!/bin/sh\n\nssh bbsu@ptt.cc' > /usr/local/bin/ptt
-echo '#!/bin/sh\n\nluit -encoding big5 telnet bs2.to' > /usr/local/bin/bs2
+echo "#!/bin/sh
+
+ssh bbsu@ptt.cc" > /usr/local/bin/ptt
+echo "#!/bin/sh
+
+luit -encoding big5 telnet bs2.to" > /usr/local/bin/bs2
+echo "#!/bin/sh
+
+clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${1} -o ${1%.*} && ./${1%.*}" > /usr/local/bin/oop
+chmod 755 /usr/local/bin/ptt /usr/local/bin/bs2 /usr/local/bin/oop
