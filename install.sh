@@ -38,8 +38,11 @@ sudo dnf install automake gcc gcc-c++ kernel-devel cmake
 sudo dnf install python-devel python3-devel
 cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --tern-completer
+ln -fs ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 # install .config/fish
 fish
 ln -s ~/.dotfiles/fish ~/.config/fish/functions
 rm ~/.dotfiles/fish/fish
+
+cd ~/.dotfiles
