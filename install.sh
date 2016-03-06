@@ -1,11 +1,8 @@
 #!/bin/bash
 
-#install tmux.conf
-ln -fs ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-sudo apt-get install gcc python-dev
-sudo yum install gcc python-devel
-python setup.py install
-pip install psutil
+# install tmux.conf
+ln -fs ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+#ln -fs ~/.dotfiles/tmux ~/.tmux
 cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
@@ -14,24 +11,26 @@ sudo yum install cmake
 cmake .
 make
 sudo make install clean
-sudo cp ~/.dotfiles/tmux/vendor/basic-cpu-and-memory.tmux /usr/local/bin/tmux-mem-cpu-load
-sudo chmod +x /usr/local/bin/tmux-mem-cpu-load
+tmux source-file ~/.tmux.conf
+cd ~/.dotfiles
 
-#install screenrc
+# install screenrc
 ln -fs ~/.dotfiles/screenrc ~/.screenrc
 
-#install bashrc
+# install bashrc
 ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
-#install gitconfig
+# install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
-#install vimrc
+# install vimrc
 ln -fs ~/.dotfiles/vim ~/.vim
 ln -fs ~/.vim/vimrc ~/.vimrc
+git submodule init
+git submodule update
 rm ~/.vim/vim
 
-#install .config/fish
+# install .config/fish
 fish
 ln -s ~/.dotfiles/fish ~/.config/fish/functions
 rm ~/.dotfiles/fish/fish
