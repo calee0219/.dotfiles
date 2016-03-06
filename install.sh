@@ -34,8 +34,12 @@ ln -fs ~/.vim/vimrc ~/.vimrc
 git submodule init
 git submodule update
 rm ~/.vim/vim
+sudo dnf install automake gcc gcc-c++ kernel-devel cmake
+sudo dnf install python-devel python3-devel
+cd ~/.dotfiles/vim/bundle/YouCompleteMe
+./install.py --clang-completer --gocode-completer --tern-completer
 
 # install .config/fish
 fish
 ln -s ~/.dotfiles/fish ~/.config/fish/functions
-rm ~/.dotfiles/fish/fish
+#rm ~/.dotfiles/fish/fish
