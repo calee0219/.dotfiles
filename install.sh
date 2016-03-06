@@ -42,4 +42,4 @@ cd ~/.dotfiles/vim/bundle/YouCompleteMe
 # install .config/fish
 fish
 ln -s ~/.dotfiles/fish ~/.config/fish/functions
-#rm ~/.dotfiles/fish/fish
+rm ~/.dotfiles/fish/fish
