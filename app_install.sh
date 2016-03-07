@@ -6,6 +6,7 @@ yum install tmux
 yum install irssi
 yum install fish
 yum install luit
+yum install shutter
 
 # editor
 yum install vim
