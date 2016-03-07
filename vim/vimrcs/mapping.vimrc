@@ -5,7 +5,7 @@
 "
 " All mode
 " mapping <leader>
-"let mapleader = ","
+let mapleader = ","
 " 設定滑鼠能用
 set mouse=nvi
 
