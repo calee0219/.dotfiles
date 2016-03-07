@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# update yum
+yum update
+yum upgrade
+
 # useful tool
 yum install git
 yum install tmux
