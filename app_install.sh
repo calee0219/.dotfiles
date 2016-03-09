@@ -8,9 +8,9 @@ yum upgrade
 yum install git
 yum install tmux
 yum install irssi
-yum install fish
 yum install luit
 yum install shutter
+#yum install fish
 
 # editor
 yum install vim
@@ -25,7 +25,7 @@ yum install nodejs
 yum install ruby
 
 # browser
-rpm -ivh google-chrome-stable_current_x86_64.rpm
+yum install google-chrome-stable_current_x86_64.rpm
 
 # developer
 yum install ctags
