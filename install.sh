@@ -12,7 +12,7 @@ cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
-sudo yum install cmake
+yes y | sudo yum install cmake
 cmake .
 make
 sudo make install clean
@@ -32,9 +32,10 @@ ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/vim ~/.vim
 git submodule init
 git submodule update
+vim +PluginInstall +qall
 rm ~/.vim/vim
-sudo dnf install automake gcc gcc-c++ kernel-devel cmake
-sudo dnf install python-devel python3-devel
+yes y | sudo dnf install automake gcc gcc-c++ kernel-devel cmake
+yes y | sudo dnf install python-devel python3-devel
 cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --tern-completer
 ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py

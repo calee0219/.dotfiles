@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yes y |
+
 # update yum
 yum update
 yum upgrade
