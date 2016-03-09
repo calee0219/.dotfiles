@@ -40,8 +40,8 @@ cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 # install .config/fish
-fish
-ln -s ~/.dotfiles/fish ~/.config/fish/functions
-rm ~/.dotfiles/fish/fish
+#fish
+#ln -s ~/.dotfiles/fish ~/.config/fish/functions
+#rm ~/.dotfiles/fish/fish
 
 cd ~/.dotfiles
