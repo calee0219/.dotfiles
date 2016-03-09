@@ -25,10 +25,7 @@ yum install nodejs
 yum install ruby
 
 # browser
-wget http://chrome.richardlloyd.org.uk/install_chrome.sh
-chmod u+x install_chrome.sh
-./install_chrome.sh
-rm install_chrome.sh
+rpm -ivh google-chrome-stable_current_x86_64.rpm
 
 # developer
 yum install ctags
