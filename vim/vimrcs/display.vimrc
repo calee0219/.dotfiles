@@ -71,7 +71,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " 設定 NERDTree 視窗大小
 let g:NERDTreeWinSize = 25
 " set NERDTree bar on the right
-let NERDTreeWinPos="right"
+"let NERDTreeWinPos="right"
 " display bookmark
 let NERDTreeShowBookmarks=1
 

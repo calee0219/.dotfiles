@@ -25,9 +25,9 @@ Plugin 'tpope/vim-surround'                 " This is for change brackets
 Plugin 'scrooloose/syntastic'               " This is for syntax checking
 Plugin 'kien/ctrlp.vim'                     " This is for keyword searching
 Plugin 'ervandew/supertab'                  " This is for using <Tab> for all your insert completion needs
-"Plugin 'jiangmiao/auto-pairs'               " This is for auto complete brackets
+Plugin 'jiangmiao/auto-pairs'               " This is for auto complete brackets
 "Plugin 'cohama/lexima.vim'                 " This is for auto complete brackets
-Plugin 'Raimondi/delimitMate'              " This is for auto complete brackets
+"Plugin 'Raimondi/delimitMate'              " This is for auto complete brackets
 "Plugin 'fisadev/fisa-vim-config'           " This is for vim python IDE
 Plugin 'vim-airline/vim-airline'            " This is for awesome outlook
 Plugin 'vim-airline/vim-airline-themes'     " This is for awesome outlook
