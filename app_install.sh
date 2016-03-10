@@ -27,7 +27,7 @@ yum install nodejs
 yum install ruby
 
 # browser
-yum install google-chrome-stable_current_x86_64.rpm
+yum install app/google-chrome-stable_current_x86_64.rpm
 
 # developer
 yum install ctags
