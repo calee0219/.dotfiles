@@ -1,36 +1,34 @@
 #!/bin/bash
 
-yes y |
-
 # update yum
-yum update
-yum upgrade
+yes | yum update
+yes | yum upgrade
 
 # useful tool
-yum install git
-yum install tmux
-yum install irssi
-yum install luit
-yum install shutter
+yes | yum install git
+yes | yum install tmux
+yes | yum install irssi
+yes | yum install luit
+yes | yum install shutter
 #yum install fish
 
 # editor
-yum install vim
-yum install emacs
+yes | yum install vim
+yes | yum install emacs
 
 # language
-yum install go
-yum install python
-yum install gcc
-yum install clang
-yum install nodejs
-yum install ruby
+yes | yum install go
+yes | yum install python
+yes | yum install gcc
+yes | yum install clang
+yes | yum install nodejs
+yes | yum install ruby
 
 # browser
-yum install app/google-chrome-stable_current_x86_64.rpm
+yes | yum install app/google-chrome-stable_current_x86_64.rpm
 
 # developer
-yum install ctags
+yes | yum install ctags
 
 # command
 echo '#!/bin/sh
