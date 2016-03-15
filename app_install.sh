@@ -10,6 +10,8 @@ yes | yum install tmux
 yes | yum install irssi
 yes | yum install luit
 yes | yum install shutter
+yes | yum install htop
+yes | yum install texlive
 #yum install fish
 
 # editor
