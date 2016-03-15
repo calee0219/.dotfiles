@@ -40,6 +40,9 @@ cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --tern-completer
 ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
+# install emacs.d
+ln -fs ~/.dotfiles/emacs.d ~/.emacs.d
+
 # install .config/fish
 #fish
 #ln -s ~/.dotfiles/fish ~/.config/fish/functions
