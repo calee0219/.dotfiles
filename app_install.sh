@@ -12,6 +12,8 @@ yes | yum install luit
 yes | yum install shutter
 yes | yum install htop
 yes | yum install texlive
+yes | yum install powertop
+yes | yum install lm_sensors
 #yum install fish
 
 # editor
