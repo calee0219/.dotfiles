@@ -19,6 +19,7 @@ fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+[[ $- != *i* ]] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -152,6 +153,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# liquidprompt for useful info
+#source ~/.dotfiles/liquidprompt/liquidprompt
+source ~/.local/bin/bashmarks.sh
 
 #export LC_ALL="zh_TW.UTF-8"
 #export LC_LANG="zh_TW.UTF-8"
