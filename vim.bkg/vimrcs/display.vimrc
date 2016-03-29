@@ -26,6 +26,7 @@ set wrap
 syntax on
 " 擴充語法上色
 "colorscheme kolor
+colorscheme monokai
 " Change background style
 set background=dark " dark or light
 " Change background and frontground color
@@ -78,6 +79,12 @@ let NERDTreeShowBookmarks=1
 " vim-airline
 " display it
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme="luna"
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
 
 " syntastic
 set statusline+=%#warningmsg#

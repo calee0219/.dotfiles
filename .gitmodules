@@ -7,3 +7,6 @@
 [submodule "vim/bundle/Vundle.vim"]
 	path = vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "liquidprompt"]
+	path = liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git
