@@ -8,7 +8,8 @@ yes | yum upgrade
 yes | yum install git
 yes | yum install tmux
 yes | yum install irssi
-yes | yum install luit
+yes | yum install zsh
+#yes | yum install luit
 yes | yum install shutter
 yes | yum install htop
 yes | yum install texlive
@@ -35,9 +36,6 @@ yes | yum install gcc
 yes | yum install clang
 yes | yum install nodejs
 yes | yum install ruby
-
-# browser
-yes | yum install app/google-chrome-stable_current_x86_64.rpm
 
 # developer
 yes | yum install ctags
