@@ -14,6 +14,14 @@ yes | yum install htop
 yes | yum install texlive
 yes | yum install powertop
 yes | yum install lm_sensors
+yes | yum install the_silver_searcher
+yes | yum install mosh
+yes | pip install mitmproxy
+git clone git://github.com/huyng/bashmarks.git
+cd bashmarks
+make install clean
+cd ..
+yes | rm -r bashmarks
 #yum install fish
 
 # editor
