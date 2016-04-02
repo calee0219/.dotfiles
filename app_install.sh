@@ -8,11 +8,11 @@
 #################################################################
 
 # checking Linux OS
-if which yum > /dev/null; then
-    app='yum'
-elif which apt-get > /dev/null; then
+if which apt-get >/dev/null 2>&1; then
     app='apt-get'
-elif which pacman > /dev/null; then
+elif which dnf >/dev/null 2>&1; then
+    app='dnf'
+elif which pacman >/dev/null 2>&1; then
     app='pacman'
 fi
 
@@ -51,7 +51,7 @@ yes | $app install mosh
 yes | pip install mitmproxy
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
-make install clean
+make install
 cd ..
 yes | rm -r bashmarks
 
