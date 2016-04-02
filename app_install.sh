@@ -1,44 +1,59 @@
 #!/bin/bash
+#################################################################
+#   This is a script for auto installing useful tool on Linux   #
+#   File name       > app_install.sh                            #
+#   Author          > Gavin Lee                                 #
+#   E-main          > sz110010@gmail.com                        #
+#   Created Time    > 2016/04/02                                #
+#################################################################
 
-# update yum
-yes | yum update
-yes | yum upgrade
+# checking Linux OS
+if which yum > /dev/null; then
+    app='yum'
+elif which apt-get > /dev/null; then
+    app='apt-get'
+elif which pacman > /dev/null; then
+    app='pacman'
+fi
+
+# update $app
+yes | $app update
+yes | $app upgrade
+
+# editor
+yes | $app install vim
+yes | $app install emacs
+
+# language
+yes | $app install go
+yes | $app install python
+yes | $app install gcc
+yes | $app install clang
+yes | $app install nodejs
+yes | $app install ruby
+
+# developer
+yes | $app install ctags
 
 # useful tool
-yes | yum install git
-yes | yum install tmux
-yes | yum install irssi
-yes | yum install zsh
-#yes | yum install luit
-yes | yum install shutter
-yes | yum install htop
-yes | yum install texlive
-yes | yum install powertop
-yes | yum install lm_sensors
-yes | yum install the_silver_searcher
-yes | yum install mosh
+yes | $app install git
+yes | $app install tmux
+yes | $app install irssi
+yes | $app install zsh
+#yes | $app install luit
+yes | $app install shutter
+yes | $app install htop
+yes | $app install texlive
+yes | $app install powertop
+yes | $app install lm_sensors
+yes | $app install the_silver_searcher
+yes | $app install mosh
 yes | pip install mitmproxy
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
 make install clean
 cd ..
 yes | rm -r bashmarks
-#yum install fish
-
-# editor
-yes | yum install vim
-yes | yum install emacs
-
-# language
-yes | yum install go
-yes | yum install python
-yes | yum install gcc
-yes | yum install clang
-yes | yum install nodejs
-yes | yum install ruby
-
-# developer
-yes | yum install ctags
 
 # command
 echo '#!/bin/sh
