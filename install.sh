@@ -26,7 +26,7 @@ ln -fs ~/.dotfiles/screenrc ~/.screenrc
 ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
 # install zxhrc
-ln -fs ~/.dotfiles/zshrc ~/.zshrc
+#ln -fs ~/.dotfiles/zshrc ~/.zshrc
 
 # install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
@@ -45,10 +45,5 @@ ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 # install emacs.d
 ln -fs ~/.dotfiles/emacs.d ~/.emacs.d
-
-# install .config/fish
-#fish
-#ln -s ~/.dotfiles/fish ~/.config/fish/functions
-#rm ~/.dotfiles/fish/fish
 
 cd ~/.dotfiles
