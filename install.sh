@@ -33,6 +33,7 @@ ln -fs ~/.dotfiles/bashrc ~/.bashrc
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
 # install vimrc
+cd ~/.dotfiles/vim
 git submodule init
 git submodule update
 ln -fs ~/.dotfiles/vim ~/.vim
@@ -45,6 +46,5 @@ cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 # install emacs.d
-ln -fs ~/.dotfiles/emacs.d ~/.emacs.d
 
 cd ~/.dotfiles
