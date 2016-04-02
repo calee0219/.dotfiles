@@ -30,12 +30,12 @@ tmux source-file ~/.tmux.conf
 cd ~/.dotfiles
 
 # install screenrc
-ln -fs ~/.dotfiles/screenrc ~/.screenrc
+#ln -fs ~/.dotfiles/screenrc ~/.screenrc
 
 # install bashrc
 ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
-# install zxhrc
+# install zshrc
 #ln -fs ~/.dotfiles/zshrc ~/.zshrc
 
 # install gitconfig
@@ -53,6 +53,9 @@ yes y | sudo $app install python-devel python3-devel
 cd ~/.dotfiles/vim/bundle/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --tern-completer
 ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+# install airline font
+cd ~/.dotfiles/fonts
+./install.sh
 
 # install emacs.d
 
