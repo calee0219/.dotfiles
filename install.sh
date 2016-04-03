@@ -36,7 +36,7 @@ cd ~/.dotfiles
 ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
 # install zshrc
-#ln -fs ~/.dotfiles/zshrc ~/.zshrc
+ln -fs ~/.dotfiles/zshrc ~/.zshrc
 
 # install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
