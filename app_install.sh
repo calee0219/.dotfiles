@@ -8,52 +8,57 @@
 #################################################################
 
 # checking Linux OS
-if which apt-get >/dev/null 2>&1; then
-    app='apt-get'
-elif which dnf >/dev/null 2>&1; then
-    app='dnf'
-elif which pacman >/dev/null 2>&1; then
-    app='pacman'
+if which apt-get > /dev/null 2>&1; then
+    apt-get update
+    apt-get upgrade
+    app='apt-get install'
+elif which dnf > /dev/null 2>&1; then
+    dnf update
+    dnf upgrade
+    app='dnf install'
+elif which pacman > /dev/null 2>&1; then
+    app='pacman -S'
 fi
 
-# update $app
-yes | $app update
-yes | $app upgrade
-
 # editor
-yes | $app install vim
-yes | $app install emacs
+yes | $app vim
+yes | $app emacs
 
 # language
-yes | $app install go
-yes | $app install python
-yes | $app install gcc
-yes | $app install clang
-yes | $app install nodejs
-yes | $app install ruby
+yes | $app go
+yes | $app python
+yes | $app gcc
+yes | $app clang
+yes | $app nodejs
+yes | $app ruby
 
 # developer
-yes | $app install ctags
+yes | $app ctags
+yes | $app the_silver_searcher
 
 # useful tool
-yes | $app install git
-yes | $app install tmux
-yes | $app install irssi
-yes | $app install zsh
-#yes | $app install luit
-yes | $app install shutter
-yes | $app install htop
-yes | $app install texlive
-yes | $app install powertop
-yes | $app install lm_sensors
-yes | $app install the_silver_searcher
-yes | $app install mosh
+yes | $app git
+yes | $app tmux
+yes | $app irssi
+yes | $app zsh
+#yes | $app luit
+yes | $app shutter
+yes | $app htop
+yes | $app texlive
+yes | $app powertop
+yes | $app lm_sensors
+yes | $app mosh
 yes | pip install mitmproxy
 git clone git://github.com/huyng/bashmarks.git
 cd bashmarks
 make install
 cd ..
 yes | rm -r bashmarks
+
+# appearance
+yes | $app powerline
+yes | $app tmux-powerline
+yes | $app vim-plugin-powerline
 
 # command
 echo '#!/bin/sh
