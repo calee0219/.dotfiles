@@ -46,13 +46,8 @@ cd ~/.dotfiles/vim
 git submodule init
 git submodule update
 ln -fs ~/.dotfiles/vim ~/.vim
-vim +PluginInstall +qall
-rm ~/.vim/vim
-yes y | sudo $app install automake gcc gcc-c++ kernel-devel cmake
-yes y | sudo $app install python-devel python3-devel
-cd ~/.dotfiles/vim/bundle/YouCompleteMe
-./install.py --clang-completer --gocode-completer --tern-completer
-ln -fs ~/.dotfiles/vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
+cd ~/.dotfiles/vim
+./install_vimrc.sh
 # install airline font
 cd ~/.dotfiles/fonts
 ./install.sh
@@ -60,3 +55,5 @@ cd ~/.dotfiles/fonts
 # install emacs.d
 
 cd ~/.dotfiles
+
+echo "You have complete installing Gavin Lee's dotfiles :)"

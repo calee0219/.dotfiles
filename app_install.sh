@@ -9,65 +9,65 @@
 
 # checking Linux OS
 if which apt-get > /dev/null 2>&1; then
-    apt-get update
-    apt-get upgrade
-    app='apt-get install'
+    sudo apt-get update
+    sudo apt-get upgrade
+    app='yes | sudo apt-get install'
 elif which dnf > /dev/null 2>&1; then
-    dnf update
-    dnf upgrade
-    app='dnf install'
+    sudo dnf update
+    sudo dnf upgrade
+    app='yes | sudo dnf install'
 elif which pacman > /dev/null 2>&1; then
-    app='pacman -S'
+    app='yes | sudo pacman -S'
 fi
 
 # editor
-yes | $app vim
-yes | $app emacs
+$app vim
+$app emacs
 
 # language
-yes | $app go
-yes | $app python
-yes | $app gcc
-yes | $app clang
-yes | $app nodejs
-yes | $app ruby
+$app go
+$app python
+$app gcc
+$app clang
+$app nodejs
+$app ruby
 
 # developer
-yes | $app ctags
-yes | $app the_silver_searcher
+$app ctags
+$app the_silver_searcher
 
 # useful tool
-yes | $app git
-yes | $app tmux
-yes | $app irssi
-yes | $app zsh
-#yes | $app luit
-yes | $app shutter
-yes | $app htop
-yes | $app texlive
-yes | $app powertop
-yes | $app lm_sensors
-yes | $app mosh
+$app git
+$app tmux
+$app irssi
+$app zsh
+#$app luit
+$app shutter
+$app htop
+$app texlive
+$app powertop
+$app lm_sensors
+$app mosh
 yes | pip install mitmproxy
-git clone git://github.com/huyng/bashmarks.git
+git clone https://github.com/huyng/bashmarks.git
 cd bashmarks
-make install
+sudo make install
 cd ..
 yes | rm -r bashmarks
 
 # appearance
-yes | $app powerline
-yes | $app tmux-powerline
-yes | $app vim-plugin-powerline
+$app powerline
+$app tmux-powerline
+$app vim-plugin-powerline
 
 # command
-echo '#!/bin/sh
+sudo echo '#!/bin/sh
 
 ssh bbsu@ptt.cc' > /usr/local/bin/ptt
-echo '#!/bin/sh
+sudo echo '#!/bin/sh
 
 luit -encoding big5 telnet bs2.to' > /usr/local/bin/bs2
-echo '#!/bin/sh
+sudo echo '#!/bin/sh
 
 clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' > /usr/local/bin/oop
-chmod 755 /usr/local/bin/ptt /usr/local/bin/bs2 /usr/local/bin/oop
+sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/bs2 /usr/local/bin/oop
