@@ -160,3 +160,10 @@ source ~/.local/bin/bashmarks.sh
 #export LC_ALL="zh_TW.UTF-8"
 #export LC_LANG="zh_TW.UTF-8"
 #export LC_LANGUAGE="zh_TW.UTF-8"
+# for powerline form
+if [ -f `which powerline-daemon`  ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /usr/share/powerline/bash/powerline.sh
+fi
