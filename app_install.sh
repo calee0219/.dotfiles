@@ -11,40 +11,40 @@
 if which apt-get > /dev/null 2>&1; then
     sudo apt-get update
     sudo apt-get upgrade
-    app='yes | sudo apt-get install'
+    app='sudo apt-get install'
 elif which dnf > /dev/null 2>&1; then
     sudo dnf update
     sudo dnf upgrade
-    app='yes | sudo dnf install'
+    app='sudo dnf install'
 elif which pacman > /dev/null 2>&1; then
-    app='yes | sudo pacman -S'
+    app='sudo pacman -S'
 fi
 
 # editor
-$app vim
-$app emacs
+yes | $app vim
+yes | $app emacs
 
 # language
-$app go
-$app python
-$app gcc
-$app clang
-$app nodejs
-$app ruby
+yes | $app go
+yes | $app python
+yes | $app gcc
+yes | $app clang
+yes | $app nodejs
+yes | $app ruby
 
 # developer
-$app ctags
-$app the_silver_searcher
+yes | $app ctags
+yes | $app the_silver_searcher
 
 # useful tool
-$app git
-$app tmux
-$app irssi
-$app zsh
-#$app luit
-$app shutter
-$app htop
-$app texlive
+yes | $app git
+yes | $app tmux
+yes | $app irssi
+yes | $app zsh
+#yes | $app luit
+yes | $app shutter
+yes | $app htop
+yes | $app texlive
 $app powertop
 $app lm_sensors
 $app mosh
@@ -56,9 +56,9 @@ cd ..
 yes | rm -r bashmarks
 
 # appearance
-$app powerline
-$app tmux-powerline
-$app vim-plugin-powerline
+yes | $app powerline
+yes | $app tmux-powerline
+yes | $app vim-plugin-powerline
 
 # command
 sudo echo '#!/bin/sh
