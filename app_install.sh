@@ -9,12 +9,12 @@
 
 # checking Linux OS
 if which apt-get > /dev/null 2>&1; then
-    sudo apt-get update
-    sudo apt-get upgrade
+    yes | sudo apt-get update
+    yes | sudo apt-get upgrade
     app='sudo apt-get install'
 elif which dnf > /dev/null 2>&1; then
-    sudo dnf update
-    sudo dnf upgrade
+    yes | sudo dnf update
+    yes | sudo dnf upgrade
     app='sudo dnf install'
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
@@ -45,9 +45,9 @@ yes | $app zsh
 yes | $app shutter
 yes | $app htop
 yes | $app texlive
-$app powertop
-$app lm_sensors
-$app mosh
+yes | $app powertop
+yes | $app lm_sensors
+yes | $app mosh
 yes | pip install mitmproxy
 git clone https://github.com/huyng/bashmarks.git
 cd bashmarks
@@ -56,6 +56,7 @@ cd ..
 yes | rm -r bashmarks
 
 # appearance
+yes | $app gnome-tweak-tool
 yes | $app powerline
 yes | $app tmux-powerline
 yes | $app vim-plugin-powerline
