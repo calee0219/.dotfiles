@@ -155,7 +155,6 @@ fi
 
 # liquidprompt for useful info
 #source ~/.dotfiles/liquidprompt/liquidprompt
-source ~/.local/bin/bashmarks.sh
 
 #export LC_ALL="zh_TW.UTF-8"
 #export LC_LANG="zh_TW.UTF-8"
