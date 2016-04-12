@@ -49,11 +49,6 @@ yes | $app powertop
 yes | $app lm_sensors
 yes | $app mosh
 yes | pip install mitmproxy
-git clone https://github.com/huyng/bashmarks.git
-cd bashmarks
-sudo make install
-cd ..
-yes | rm -r bashmarks
 
 # appearance
 yes | $app gnome-tweak-tool
