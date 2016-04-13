@@ -46,6 +46,7 @@ cd ~/.dotfiles/vim
 git submodule init
 git submodule update
 ln -fs ~/.dotfiles/vim ~/.vim
+rm ~/.vim/vim
 cd ~/.dotfiles/vim
 ./install_vimrc.sh
 # install airline font
