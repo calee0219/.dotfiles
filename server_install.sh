@@ -16,5 +16,11 @@ elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
 
+# install server
 yes | $app nginx
 sudo systemctl enable nginx.service
+yes | $app mysql mysql-server
+sudo systemctl enable mariadb.service
+
+# server monitor and checking tool
+yes | pip install mitmproxy

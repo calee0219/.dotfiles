@@ -43,12 +43,14 @@ yes | $app irssi
 yes | $app zsh
 #yes | $app luit
 yes | $app shutter
-yes | $app htop
 yes | $app texlive
+yes | $app mosh
+
+# monitor tool
+yes | $app htop
 yes | $app powertop
 yes | $app lm_sensors
-yes | $app mosh
-yes | pip install mitmproxy
+yes | $app nmon
 
 # appearance
 yes | $app gnome-tweak-tool
