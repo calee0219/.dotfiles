@@ -18,9 +18,16 @@ fi
 
 # install server
 yes | $app nginx
+sudo systemctl start nginx.service
 sudo systemctl enable nginx.service
-yes | $app mysql mysql-server
-sudo systemctl enable mariadb.service
+
+yes | $app mariadb mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
+yes | $app php-fpm php-mysql php-common phpMyAdmin
+sudo systemctl start php-fpm.service
+sduo systemctl enable php-fpm.service
 
 # server monitor and checking tool
 yes | pip install mitmproxy
