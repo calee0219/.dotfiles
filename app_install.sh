@@ -15,7 +15,7 @@ if which apt-get > /dev/null 2>&1; then
 elif which dnf > /dev/null 2>&1; then
     yes | sudo dnf update
     yes | sudo dnf upgrade
-    app='sudo dnf install'
+    app='sudo dnf install --best --allowerasing'
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
@@ -41,7 +41,7 @@ yes | $app git
 yes | $app tmux
 yes | $app irssi
 yes | $app zsh
-#yes | $app luit
+yes | $app luit
 yes | $app shutter
 yes | $app texlive
 yes | $app mosh
@@ -59,13 +59,16 @@ yes | $app tmux-powerline
 yes | $app vim-plugin-powerline
 
 # command
-sudo echo '#!/bin/sh
+sudo touch /usr/local/bin/ptt
+sudo touch /usr/local/bin/bs2
+sudo touch /usr/local/bin/oop
+echo '#!/bin/sh
 
-ssh bbsu@ptt.cc' > /usr/local/bin/ptt
-sudo echo '#!/bin/sh
+ssh bbsu@ptt.cc' | sudo tee --append /usr/local/bin/ptt
+echo '#!/bin/sh
 
-luit -encoding big5 telnet bs2.to' > /usr/local/bin/bs2
-sudo echo '#!/bin/sh
+luit -encoding big5 telnet bs2.to' | sudo tee --append /usr/local/bin/bs2
+echo '#!/bin/sh
 
-clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' > /usr/local/bin/oop
+clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/oop
 sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/bs2 /usr/local/bin/oop

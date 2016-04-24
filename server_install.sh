@@ -11,7 +11,7 @@
 if which apt-get > /dev/null 2>&1; then
     app='sudo apt-get install'
 elif which dnf > /dev/null 2>&1; then
-    app='sudo dnf install'
+    app='sudo dnf install --best --allowerasing'
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
@@ -30,4 +30,3 @@ sudo systemctl start php-fpm.service
 sduo systemctl enable php-fpm.service
 
 # server monitor and checking tool
-yes | pip install mitmproxy
