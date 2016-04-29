@@ -2,11 +2,11 @@
 
 # checking Linux OS
 if which apt-get >/dev/null 2>&1; then
-    app='apt-get'
+    app='sudo apt-get install'
 elif which dnf >/dev/null 2>&1; then
-    app='dnf'
+    app='sudo dnf install --best --allowerasing'
 elif which pacman >/dev/null 2>&1; then
-    app='pacman'
+    app='sudo pacman -S'
 fi
 
 # git submodule
@@ -22,7 +22,7 @@ cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
-yes y | sudo $app install cmake
+yes | $app install cmake
 cmake .
 make
 sudo make install clean
