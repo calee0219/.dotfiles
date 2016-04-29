@@ -47,10 +47,13 @@ yes | $app texlive
 yes | $app mosh
 
 # monitor tool
+yes | $app conky
+yes | $app conky-manager
 yes | $app htop
 yes | $app powertop
 yes | $app lm_sensors
 yes | $app nmon
+yes | $app hddtemp
 
 # appearance
 yes | $app gnome-tweak-tool
