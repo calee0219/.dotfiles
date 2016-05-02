@@ -26,11 +26,25 @@ yes | $app emacs
 
 # language
 yes | $app go
+yes | $app gcc-go
 yes | $app python
 yes | $app gcc
 yes | $app clang
 yes | $app nodejs
 yes | $app ruby
+
+# language support
+# go
+#gocode is used by many editors to provide intellisense
+go get github.com/nsf/gocode
+#goimports is something you should run when saving code to fill in import paths
+go get golang.org/x/tools/cmd/goimports
+#gorename is used by many editors to provide identifier rename support
+go get golang.org/x/tools/cmd/gorename
+#oracle is a tool that help with code navigation and search
+go get golang.org/x/tools/cmd/oracle
+#golint should be run after every build to check your code
+go get github.com/golang/lint/golint
 
 # developer
 yes | $app ctags
