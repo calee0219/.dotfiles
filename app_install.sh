@@ -84,8 +84,11 @@ echo '#!/bin/sh
 ssh bbsu@ptt.cc' | sudo tee --append /usr/local/bin/ptt
 echo '#!/bin/sh
 
-luit -encoding big5 telnet bs2.to' | sudo tee --append /usr/local/bin/bs2
+ssh calee0219@140.113.94.210' | sudo tee --append /usr/local/bin/lab
 echo '#!/bin/sh
 
 clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/oop
-sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/bs2 /usr/local/bin/oop
+echo '#!/bin/sh
+
+g++ -std=c++17 -Wall -Wextra -pedantic -g3 -O3 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/ggg
+sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/oop /usr/local/bin/ggg
