@@ -84,7 +84,7 @@ echo '#!/bin/sh
 ssh bbsu@ptt.cc' | sudo tee --append /usr/local/bin/ptt
 echo '#!/bin/sh
 
-ssh calee0219@140.113.94.210' | sudo tee --append /usr/local/bin/lab
+ssh calee0219@140.113.195.210' | sudo tee --append /usr/local/bin/lab
 echo '#!/bin/sh
 
 clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/oop
