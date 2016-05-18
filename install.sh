@@ -49,9 +49,6 @@ ln -fs ~/.dotfiles/vim ~/.vim
 rm ~/.vim/vim
 cd ~/.dotfiles/vim
 ./install_vimrc.sh
-# install airline font
-cd ~/.dotfiles/fonts
-./install.sh
 
 # install emacs.d
 
