@@ -10,9 +10,6 @@
 [submodule "liquidprompt"]
 	path = liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git
-[submodule "vim"]
-	path = vim
-	url = https://github.com/calee0219/vim.git
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts.git
