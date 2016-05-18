@@ -16,6 +16,22 @@ elif which dnf > /dev/null 2>&1; then
     yes | sudo dnf update
     yes | sudo dnf upgrade
     app='sudo dnf install --best --allowerasing'
+
+    # Browser
+    su -c "wget https://repos.fedorapeople.org/repos/spot/chromium/fedora-chromium-stable.repo -O /etc/yum.repos.d/fedora-chromium-stable.repo"
+    sudo rpm --import https://repos.fedorapeople.org/repos/spot/chromium/spot.gpg
+    $app chromium
+
+    # language
+    yes | $app go
+    yes | $app gcc-go
+
+    # monitor tool
+    yes | $app lm_sensors
+
+    # appearance
+    yes | $app tmux-powerline
+    yes | $app vim-plugin-powerline
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
@@ -25,8 +41,6 @@ yes | $app vim
 yes | $app emacs
 
 # language
-yes | $app go
-yes | $app gcc-go
 yes | $app python
 yes | $app gcc
 yes | $app clang
@@ -65,20 +79,19 @@ yes | $app conky
 yes | $app conky-manager
 yes | $app htop
 yes | $app powertop
-yes | $app lm_sensors
 yes | $app nmon
 yes | $app hddtemp
+yes | $app cpufreq-utils
 
 # appearance
 yes | $app gnome-tweak-tool
 yes | $app powerline
-yes | $app tmux-powerline
-yes | $app vim-plugin-powerline
 
 # command
 sudo touch /usr/local/bin/ptt
-sudo touch /usr/local/bin/bs2
+sudo touch /usr/local/bin/lab
 sudo touch /usr/local/bin/oop
+sudo touch /usr/local/bin/ggg
 echo '#!/bin/sh
 
 ssh bbsu@ptt.cc' | sudo tee --append /usr/local/bin/ptt

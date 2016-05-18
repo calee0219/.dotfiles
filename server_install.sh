@@ -29,8 +29,9 @@ sudo systemctl enable mariadb
 
 # php
 yes | $app php-fpm php-mysql php-common phpMyAdmin
+sudo ln -s /usr/share/phpMyAdmin /usr/share/nginx/html
 sudo systemctl start php-fpm.service
-sduo systemctl enable php-fpm.service
+sudo systemctl enable php-fpm.service
 
 # go
 # goserv
