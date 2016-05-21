@@ -33,8 +33,4 @@ sudo ln -s /usr/share/phpMyAdmin /usr/share/nginx/html
 sudo systemctl start php-fpm.service
 sudo systemctl enable php-fpm.service
 
-# go
-# goserv
-go get github.com/gotschmarcel/goserv
-
 # server monitor and checking tool
