@@ -20,7 +20,7 @@ elif which dnf > /dev/null 2>&1; then
     # Browser
     su -c "wget https://repos.fedorapeople.org/repos/spot/chromium/fedora-chromium-stable.repo -O /etc/yum.repos.d/fedora-chromium-stable.repo"
     sudo rpm --import https://repos.fedorapeople.org/repos/spot/chromium/spot.gpg
-    $app chromium
+    yes | $app chromium
 
     # language
     yes | $app go
