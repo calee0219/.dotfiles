@@ -18,9 +18,9 @@ elif which dnf > /dev/null 2>&1; then
     app='sudo dnf install --best --allowerasing'
 
     # Browser
-    su -c "wget https://repos.fedorapeople.org/repos/spot/chromium/fedora-chromium-stable.repo -O /etc/yum.repos.d/fedora-chromium-stable.repo"
-    sudo rpm --import https://repos.fedorapeople.org/repos/spot/chromium/spot.gpg
-    yes | $app chromium
+    #su -c "wget https://repos.fedorapeople.org/repos/spot/chromium/fedora-chromium-stable.repo -O /etc/yum.repos.d/fedora-chromium-stable.repo"
+    #sudo rpm --import https://repos.fedorapeople.org/repos/spot/chromium/spot.gpg
+    #yes | $app chromium
 
     # language
     yes | $app go
@@ -69,6 +69,7 @@ yes | $app powertop
 yes | $app nmon
 yes | $app hddtemp
 yes | $app cpufreq-utils
+yes | $app glances
 
 # appearance
 yes | $app gnome-tweak-tool
