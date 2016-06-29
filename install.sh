@@ -22,7 +22,7 @@ cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
-yes | $app install cmake
+yes | $app cmake
 cmake .
 make
 sudo make install clean
@@ -42,13 +42,13 @@ ln -fs ~/.dotfiles/zshrc ~/.zshrc
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
 # install vimrc
-cd ~/.dotfiles/vim
-git submodule init
-git submodule update
-ln -fs ~/.dotfiles/vim ~/.vim
-rm ~/.vim/vim
-cd ~/.dotfiles/vim
-./install_vimrc.sh
+#cd ~/.dotfiles/vim
+#git submodule init
+#git submodule update
+#ln -fs ~/.dotfiles/vim ~/.vim
+#rm ~/.vim/vim
+#cd ~/.dotfiles/vim
+#./install_vimrc.sh
 
 # install emacs.d
 
