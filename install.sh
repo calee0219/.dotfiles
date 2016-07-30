@@ -33,7 +33,7 @@ cd ~/.dotfiles
 #ln -fs ~/.dotfiles/screenrc ~/.screenrc
 
 # install bashrc
-ln -fs ~/.dotfiles/bashrc ~/.bashrc
+#ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
 # install zshrc
 ln -fs ~/.dotfiles/zshrc ~/.zshrc

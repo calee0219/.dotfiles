@@ -45,34 +45,34 @@ yes | $app python
 yes | $app gcc
 yes | $app clang
 yes | $app nodejs
-yes | $app ruby
+#yes | $app ruby
 
 # developer
 yes | $app ctags
-yes | $app the_silver_searcher
+#yes | $app the_silver_searcher
 
 # useful tool
 yes | $app git
 yes | $app tmux
 yes | $app irssi
 yes | $app zsh
-yes | $app luit
-yes | $app shutter
-yes | $app texlive
-yes | $app mosh
+#yes | $app luit
+#yes | $app shutter
+#yes | $app texlive
+#yes | $app mosh
 
 # monitor tool
-yes | $app conky
-yes | $app conky-manager
+#yes | $app conky
+#yes | $app conky-manager
 yes | $app htop
-yes | $app powertop
-yes | $app nmon
-yes | $app hddtemp
-yes | $app cpufreq-utils
+#yes | $app powertop
+#yes | $app nmon
+#yes | $app hddtemp
+#yes | $app cpufreq-utils
 yes | $app glances
 
 # appearance
-yes | $app gnome-tweak-tool
+#yes | $app gnome-tweak-tool
 yes | $app powerline
 
 # command
