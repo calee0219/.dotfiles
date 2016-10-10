@@ -12,6 +12,7 @@ if which apt-get > /dev/null 2>&1; then
     yes | sudo apt-get update
     yes | sudo apt-get upgrade
     app='sudo apt-get install -f'
+    yes | $app gccgo
 elif which dnf > /dev/null 2>&1; then
     yes | sudo dnf update
     yes | sudo dnf upgrade
@@ -32,6 +33,7 @@ elif which dnf > /dev/null 2>&1; then
     # appearance
     yes | $app tmux-powerline
     yes | $app vim-plugin-powerline
+	yes | $app powerline
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
@@ -42,9 +44,11 @@ yes | $app emacs
 
 # language
 yes | $app python
+yes | $app python-pip
 yes | $app gcc
 yes | $app clang
 yes | $app nodejs
+yes | $app npm
 #yes | $app ruby
 
 # developer
@@ -55,7 +59,7 @@ yes | $app ctags
 yes | $app git
 yes | $app tmux
 yes | $app irssi
-yes | $app zsh
+#yes | $app zsh
 #yes | $app luit
 #yes | $app shutter
 #yes | $app texlive
@@ -73,11 +77,12 @@ yes | $app glances
 
 # appearance
 #yes | $app gnome-tweak-tool
-yes | $app powerline
 
 # command
 sudo touch /usr/local/bin/ptt
 sudo touch /usr/local/bin/lab
+sudo touch /usr/local/bin/bsd
+sudo touch /usr/local/bin/ser
 sudo touch /usr/local/bin/oop
 sudo touch /usr/local/bin/ggg
 echo '#!/bin/sh
@@ -85,11 +90,29 @@ echo '#!/bin/sh
 ssh bbsu@ptt.cc' | sudo tee --append /usr/local/bin/ptt
 echo '#!/bin/sh
 
-ssh calee0219@140.113.195.210' | sudo tee --append /usr/local/bin/lab
+if getopts :f op ; then
+	sftp calee0219@140.113.195.210
+else
+	ssh calee0219@140.113.195.210
+fi' | sudo tee --append /usr/local/bin/lab
+echo '#!/bin/sh
+
+if getopts :f op ; then
+	sftp -P 222 calee0219@140.113.69.46
+else
+	ssh -p 222 calee0219@140.113.69.46
+fi' | sudo tee --append /usr/local/bin/bsd
+echo '#!/bin/sh
+
+if getopts :f op ; then
+	sftp calee0219@140.113.69.46
+else
+	ssh calee0219@140.113.69.46
+fi' | sudo tee --append /usr/local/bin/ser
 echo '#!/bin/sh
 
 clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/oop
 echo '#!/bin/sh
 
 g++ -std=c++17 -Wall -Wextra -pedantic -g3 -O3 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee --append /usr/local/bin/ggg
-sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/oop /usr/local/bin/ggg
+sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/bsd /usr/local/bin/ser /usr/local/bin/oop /usr/local/bin/ggg
