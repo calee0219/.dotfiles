@@ -83,6 +83,9 @@ sudo touch /usr/local/bin/ptt
 sudo touch /usr/local/bin/lab
 sudo touch /usr/local/bin/bsd
 sudo touch /usr/local/bin/ser
+sudo touch /usr/local/bin/csl
+sudo touch /usr/local/bin/csb
+sudo touch /usr/local/bin/toolbox
 sudo touch /usr/local/bin/oop
 sudo touch /usr/local/bin/ggg
 echo '#!/bin/sh
@@ -111,8 +114,29 @@ else
 fi' | sudo tee /usr/local/bin/ser
 echo '#!/bin/sh
 
+if getopts :f op ; then
+	sftp calee0219@linux2.cs.nctu.edu.tw
+else
+	ssh calee0219@linux2.cs.nctu.edu.tw
+fi' | sudo tee /usr/local/bin/csl
+echo '#!/bin/sh
+
+if getopts :f op ; then
+	sftp calee0219@bsd2.cs.nctu.edu.tw
+else
+	ssh calee0219@bsd2.cs.nctu.edu.tw
+fi' | sudo tee /usr/local/bin/csb
+echo '#!/bin/sh
+
+if getopts :f op ; then
+	sftp calee0219@140.113.66.249
+else
+	ssh calee0219@140.113.66.249
+fi' | sudo tee /usr/local/bin/toolbox
+echo '#!/bin/sh
+
 clang++ -std=c++14 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee /usr/local/bin/oop
 echo '#!/bin/sh
 
 g++ -std=c++17 -Wall -Wextra -pedantic -g3 -O3 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee /usr/local/bin/ggg
-sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/bsd /usr/local/bin/ser /usr/local/bin/oop /usr/local/bin/ggg
+sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/bsd /usr/local/bin/ser /usr/local/bin/csl /usr/local/bin/csb /usr/local/bin/toolbox /usr/local/bin/oop /usr/local/bin/ggg
