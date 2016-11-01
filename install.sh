@@ -42,6 +42,7 @@ cd ~/.dotfiles
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
 # install vimrc
+ln -fs ~/.dotfiles/vimrc ~/.vimrc
 #cd ~/.dotfiles/vim
 #git submodule init
 #git submodule update
