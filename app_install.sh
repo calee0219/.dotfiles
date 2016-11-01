@@ -96,42 +96,42 @@ echo '#!/bin/sh
 if getopts :f op ; then
 	sftp calee0219@140.113.195.210
 else
-	ssh calee0219@140.113.195.210
+	ssh -X calee0219@140.113.195.210
 fi' | sudo tee /usr/local/bin/lab
 echo '#!/bin/sh
 
 if getopts :f op ; then
 	sftp -P 222 calee0219@140.113.69.46
 else
-	ssh -p 222 calee0219@140.113.69.46
+	ssh -X -p 222 calee0219@140.113.69.46
 fi' | sudo tee /usr/local/bin/bsd
 echo '#!/bin/sh
 
 if getopts :f op ; then
 	sftp calee0219@140.113.69.46
 else
-	ssh calee0219@140.113.69.46
+	ssh -X calee0219@140.113.69.46
 fi' | sudo tee /usr/local/bin/ser
 echo '#!/bin/sh
 
 if getopts :f op ; then
 	sftp calee0219@linux2.cs.nctu.edu.tw
 else
-	ssh calee0219@linux2.cs.nctu.edu.tw
+	ssh -X calee0219@linux2.cs.nctu.edu.tw
 fi' | sudo tee /usr/local/bin/csl
 echo '#!/bin/sh
 
 if getopts :f op ; then
 	sftp calee0219@bsd2.cs.nctu.edu.tw
 else
-	ssh calee0219@bsd2.cs.nctu.edu.tw
+	ssh -X calee0219@bsd2.cs.nctu.edu.tw
 fi' | sudo tee /usr/local/bin/csb
 echo '#!/bin/sh
 
 if getopts :f op ; then
 	sftp calee0219@140.113.66.249
 else
-	ssh calee0219@140.113.66.249
+	ssh -X calee0219@140.113.66.249
 fi' | sudo tee /usr/local/bin/toolbox
 echo '#!/bin/sh
 
