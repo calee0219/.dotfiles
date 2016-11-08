@@ -45,12 +45,19 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'xuhdev/SingleCompile'
+Plug 'scrooloose/nerdcommenter'
+Plug 'rking/ag.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/vimshell.vim'
 
 let g:make = 'gmake'
 if system('uname -o') =~ '^GNU/'
         let g:make = 'make'
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
@@ -89,6 +96,7 @@ Plug 'vim-scripts/slimv.vim'
 
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
+
 "" TypeScript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -418,6 +426,7 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -609,6 +618,10 @@ vnoremap <leader>rem  :RExtractMethod<cr>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+"" SingleCompile
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
 
 "*****************************************************************************
 "" Convenience variables

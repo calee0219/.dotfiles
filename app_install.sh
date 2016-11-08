@@ -48,6 +48,7 @@ yes | $app python-pip
 yes | $app gcc
 yes | $app clang
 yes | $app nodejs
+yes | $app nodejs-legacy
 yes | $app npm
 #yes | $app ruby
 
