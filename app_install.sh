@@ -67,6 +67,8 @@ yes | $app clang
 yes | $app nodejs
 yes | $app nodejs-legacy
 yes | $app npm
+sudo npm install n -g
+sudo n stable
 #yes | $app ruby
 
 # developer
