@@ -9,8 +9,13 @@
 
 # checking Linux OS
 if which apt-get > /dev/null 2>&1; then
-    yes | sudo apt-get update
-    yes | sudo apt-get upgrade
+    # spotify
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+    echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt-get update
+    sudo apt-get install spotify-client
+    yes | sudo apt update
+    yes | sudo apt upgrade
     app='sudo apt-get install -f'
     yes | $app gccgo
 elif which dnf > /dev/null 2>&1; then
@@ -38,9 +43,21 @@ elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
 fi
 
+# input
+yes | $app fcitx
+yes | $app im-config
+sudo add-apt-repository ppa:fcitx-team/nightly
+sudo apt update
+yes | $app fcitx-table-boshiamy
+yes | $app fcitx-chewing
+
 # editor
 yes | $app vim
 yes | $app emacs
+
+# work
+yes | $app slack-desktop
+yes | $app nginx
 
 # language
 yes | $app python
@@ -50,19 +67,23 @@ yes | $app clang
 yes | $app nodejs
 yes | $app nodejs-legacy
 yes | $app npm
+sudo npm install n -g
+sudo n stable
 #yes | $app ruby
 
 # developer
 yes | $app ctags
-#yes | $app the_silver_searcher
+yes | $app the_silver_searcher
+yes | $app silversearcher-ag
+sudo npm install -g angular angular-cli
 
 # useful tool
 yes | $app git
 yes | $app tmux
 yes | $app irssi
+yes | $app shutter
 #yes | $app zsh
 #yes | $app luit
-#yes | $app shutter
 #yes | $app texlive
 #yes | $app mosh
 
@@ -72,6 +93,7 @@ yes | $app irssi
 yes | $app htop
 #yes | $app powertop
 #yes | $app nmon
+#yes | $app bmon
 #yes | $app hddtemp
 #yes | $app cpufreq-utils
 yes | $app glances
@@ -141,3 +163,5 @@ echo '#!/bin/sh
 
 g++ -std=c++17 -Wall -Wextra -pedantic -g3 -O3 ${*} -o ${1%.*} && time ./${1%.*}' | sudo tee /usr/local/bin/ggg
 sudo chmod 755 /usr/local/bin/ptt /usr/local/bin/lab /usr/local/bin/bsd /usr/local/bin/ser /usr/local/bin/csl /usr/local/bin/csb /usr/local/bin/toolbox /usr/local/bin/oop /usr/local/bin/ggg
+
+./install.sh

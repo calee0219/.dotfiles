@@ -36,7 +36,7 @@ cd ~/.dotfiles
 #ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
 # install zshrc
-#ln -fs ~/.dotfiles/zshrc ~/.zshrc
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
