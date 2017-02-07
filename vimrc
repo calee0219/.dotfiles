@@ -83,7 +83,11 @@ Plug 'tomasr/molokai'
 Plug 'vim-perl/vim-perl'
 Plug 'c9s/perlomni.vim'
 
-Plug 'vim-scripts/c.vim'
+"Plug 'vim-scripts/c.vim'
+Plug 'vim-scripts/google.vim'
+"Plug 'google/vim-maktab'
+"Plug 'google/vim-codefmt'
+"Plug 'google/vim-glaive'
 
 Plug 'jimenezrick/vimerl'
 
@@ -154,6 +158,10 @@ filetype plugin indent on
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
+
+"" indent
+set autoindent
+set smartindent
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -354,6 +362,10 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
+
+" google cmf
+"call glaive#install()
+"Glaive codefmt plugin[mappings]
 
 "*****************************************************************************
 "" Mappings
