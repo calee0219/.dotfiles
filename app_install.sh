@@ -18,6 +18,7 @@ if which apt-get > /dev/null 2>&1; then
     yes | sudo apt upgrade
     app='sudo apt-get install -f'
     yes | $app gccgo
+    yes | $app golang
 elif which dnf > /dev/null 2>&1; then
     yes | sudo dnf update
     yes | sudo dnf upgrade
