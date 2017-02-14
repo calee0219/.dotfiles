@@ -83,6 +83,11 @@ Plug 'tomasr/molokai'
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
+" google style
+Plug 'vim-scripts/google.vim'
+"Plug 'google/vim-maktab'
+"Plug 'google/vim-codefmt'
+"Plug 'google/vim-glaive'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
@@ -190,6 +195,10 @@ set fileencodings=utf-8
 set bomb
 set binary
 set ttyfast
+
+"" indent
+set autoindent
+set smartindent
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -387,6 +396,10 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
+
+" google cmf
+"call glaive#install()
+"Glaive codefmt plugin[mappings]
 
 "*****************************************************************************
 "" Mappings

@@ -132,9 +132,9 @@ fi' | sudo tee /usr/local/bin/bsd
 echo '#!/bin/sh
 
 if getopts :f op ; then
-	sftp calee0219@140.113.69.46
+	sftp calee0219@140.113.69.46 -P 50
 else
-	ssh -X calee0219@140.113.69.46
+	ssh -X calee0219@140.113.69.46 -p 50
 fi' | sudo tee /usr/local/bin/ser
 echo '#!/bin/sh
 
