@@ -46,8 +46,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/SingleCompile'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rking/ag.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/vimshell.vim'
 
 let g:make = 'gmake'
 if exists('make')
@@ -112,7 +110,6 @@ Plug 'pbrisbin/vim-syntax-shakespeare'
 
 " html
 "" HTML Bundle
-Plug 'alvan/vim-closetag'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
@@ -196,10 +193,6 @@ set bomb
 set binary
 set ttyfast
 
-"" indent
-set autoindent
-set smartindent
-
 "" Fix backspace indent
 set backspace=indent,eol,start
 
@@ -227,7 +220,12 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 set showcmd
-set shell=/bin/sh
+
+if exists('$SHELL')
+    set shell=$SHELL
+else
+    set shell=/bin/sh
+endif
 
 " session management
 let g:session_directory = "~/.vim/session"
@@ -300,6 +298,11 @@ set titlestring=%F
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
@@ -370,10 +373,10 @@ endif
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
-"" The PC is fast enough, do syntax highlight syncing from start
+"" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
-  autocmd BufEnter * :syntax sync fromstart
+  autocmd BufEnter * :syntax sync maxlines=200
 augroup END
 
 "" Remember cursor position
@@ -396,10 +399,6 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
-
-" google cmf
-"call glaive#install()
-"Glaive codefmt plugin[mappings]
 
 "*****************************************************************************
 "" Mappings
@@ -639,7 +638,7 @@ let g:javascript_enable_domhtmlcss = 1
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4
 augroup END
 
 
@@ -669,7 +668,7 @@ let g:syntastic_ocaml_checkers = ['merlin']
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
+      \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
@@ -704,7 +703,7 @@ let g:rubycomplete_rails = 1
 augroup vimrc-ruby
   autocmd!
   autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
-  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+  autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 augroup END
 
 let g:tagbar_type_ruby = {
@@ -787,3 +786,4 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
