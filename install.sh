@@ -40,6 +40,7 @@ cd ~/.dotfiles
 
 # install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
+ln -fs ~/.dotfiles/gitmessage ~/.gitmessage
 
 # install vimrc
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
