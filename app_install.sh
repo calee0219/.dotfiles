@@ -98,7 +98,10 @@ yes | $app nmap
 #yes | $app conky
 #yes | $app conky-manager
 yes | $app htop
+yes | $app atop
+yes | $app dstat
 yes | $app glances
+sudo npm install -g vtop
 #yes | $app nmon
 #yes | $app powertop
 #yes | $app bmon
