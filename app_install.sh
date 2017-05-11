@@ -42,6 +42,8 @@ elif which dnf > /dev/null 2>&1; then
 	yes | $app powerline
 elif which pacman > /dev/null 2>&1; then
     app='sudo pacman -S'
+elif which brew > /dev/null 2>&1; then
+    app='brew install'
 fi
 
 # input

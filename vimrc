@@ -787,3 +787,6 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+"" Add your self
+" For git
+autocmd Filetype gitcommit setlocal spell textwidth=80
