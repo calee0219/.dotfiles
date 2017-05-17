@@ -9,9 +9,12 @@
 	status = auto
 [core]
 	editor = vim
+    pager = less -R
 [alias]
 	ap = add --patch
+    sub = reset HEAD
 	st = status
+    s = status -s
 	co = checkout
 	ci = commit
 	br = branch
@@ -22,7 +25,7 @@
 	shows = show --stat
 	showns = show --name-status
 	logs = log --pretty=oneline --abbrev-commit
-	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [diff]
 	tool = vimdiff
 [commit]
