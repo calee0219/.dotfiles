@@ -62,6 +62,11 @@ yes | $app emacs
 yes | $app slack
 yes | $app openssh-server
 yes | $app nginx
+## geth
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install ethereum
 
 # language
 yes | $app python3
@@ -93,8 +98,7 @@ yes | $app curl
 #yes | $app mosh
 
 # secure
-yes | $app wireshark
-yes | $app nmap
+./security.sh
 
 # monitor tool
 #yes | $app conky
