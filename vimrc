@@ -46,6 +46,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'xuhdev/SingleCompile'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rking/ag.vim'
+Plug 'Chiel92/vim-autoformat'
 
 let g:make = 'gmake'
 if exists('make')
@@ -746,6 +747,10 @@ endif
 "" SingleCompile
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
+
+"" Vim-AutoFormat
+"noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
 
 "*****************************************************************************
 "" Convenience variables
