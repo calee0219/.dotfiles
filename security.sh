@@ -29,6 +29,7 @@ yes | $app nmap
 yes | $app python python-setuptools python-pip
 yes | $app tor
 yes | $app docker
+yes | $app virtualbox
 
 # pip
 sudo pip install github3.py

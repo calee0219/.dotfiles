@@ -40,6 +40,7 @@ yes | $app emacs
 yes | $app slack
 yes | $app openssh-server
 yes | $app nginx
+yes | $app virtualbox
 
 ## geth
 sudo apt-get install software-properties-common
