@@ -2,7 +2,6 @@
 if [ -f '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc' ];
     if type source > /dev/null; source '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc'; else; . '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc'; end;
 end
-set -x PATH /Users/calee0219/Security/ctf-tools/bin $PATH
 
 function ser
     ssh -X ssh.calee.com.tw -p 50
@@ -14,4 +13,10 @@ end
 
 function kali
     ssh -X root@ssh.calee.com.tw -p 5050
+end
+
+function ccp
+    #clang++ -std=c++17 -Wall -Wextra -pedantic -g3 -O2 ${*} -o ${1%.*} && time ./${1%.*}
+    clang++ -std=c++1z $argv
+    time ./a.out
 end
