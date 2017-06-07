@@ -8,7 +8,7 @@ function ser
 end
 
 function gcp
-    ssh -X sz110010@gcp.calee.com.tw
+    ssh -X calee0219@gcp.calee.com.tw
 end
 
 function kali
