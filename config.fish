@@ -2,6 +2,7 @@
 if [ -f '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc' ];
     if type source > /dev/null; source '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc'; else; . '/Users/calee0219/Downloads/google-cloud-sdk/path.fish.inc'; end;
 end
+set -U fish_user_paths /usr/local/bin $HOME/.local/bin $fish_user_paths
 
 function ser
     ssh -X ssh.calee.com.tw -p 50
