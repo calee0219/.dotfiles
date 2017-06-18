@@ -1,5 +1,6 @@
 # global verable
 fish_vi_key_bindings
+set -U fish_user_paths /usr/local/bin $HOME/.local/bin $fish_user_paths
 
 # command
 function ser
