@@ -9,6 +9,7 @@ pip3 install jupyter
 pip3 install ipyparallel
 pip3 install jupyterhub
 pip3 install tensorflow
+pip3 install tensorflow-gpu
 ## visualize
 pip3 install matplotlib
 pip3 install seaborn
@@ -25,6 +26,7 @@ pip install jupyter
 pip install ipyparallel
 pip install jupyterhub
 pip install tensorflow
+pip install tensorflow-gpu
 ## visualize
 pip install matplotlib
 pip install seaborn
