@@ -27,3 +27,6 @@ docker-engine | 1.12.5-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubun
 docker-engine | 1.12.4-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
 
 sudo apt-get -y install docker-engine=1.13.0-0~ubuntu-xenial
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
