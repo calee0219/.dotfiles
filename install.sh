@@ -22,6 +22,7 @@ cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
+git pull origin master
 yes | $app cmake
 cmake .
 make
