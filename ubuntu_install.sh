@@ -13,7 +13,7 @@ if which apt-get > /dev/null 2>&1; then
     yes | sudo apt upgrade
     app='sudo apt install'
     yes | $app golang
-elif
+else
     echo "this is not ubuntu"
 fi
 
@@ -48,6 +48,7 @@ yes | $app tmux
 yes | $app irssi
 yes | $app shutter
 yes | $app curl
+yes | $app docker
 #yes | $app mosh
 
 # secure
@@ -87,44 +88,44 @@ yes | $app glances
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.195.210
+#   sftp calee0219@140.113.195.210
 #else
-#	ssh -X calee0219@140.113.195.210
+#   ssh -X calee0219@140.113.195.210
 #fi' | sudo tee /usr/local/bin/lab
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp -P 222 calee0219@140.113.69.46
+#   sftp -P 222 calee0219@140.113.69.46
 #else
-#	ssh -X -p 222 calee0219@140.113.69.46
+#   ssh -X -p 222 calee0219@140.113.69.46
 #fi' | sudo tee /usr/local/bin/bsd
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.69.46 -P 50
+#   sftp calee0219@140.113.69.46 -P 50
 #else
-#	ssh -X calee0219@140.113.69.46 -p 50
+#   ssh -X calee0219@140.113.69.46 -p 50
 #fi' | sudo tee /usr/local/bin/ser
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@linux2.cs.nctu.edu.tw
+#   sftp calee0219@linux2.cs.nctu.edu.tw
 #else
-#	ssh -X calee0219@linux2.cs.nctu.edu.tw
+#   ssh -X calee0219@linux2.cs.nctu.edu.tw
 #fi' | sudo tee /usr/local/bin/csl
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@bsd2.cs.nctu.edu.tw
+#   sftp calee0219@bsd2.cs.nctu.edu.tw
 #else
-#	ssh -X calee0219@bsd2.cs.nctu.edu.tw
+#   ssh -X calee0219@bsd2.cs.nctu.edu.tw
 #fi' | sudo tee /usr/local/bin/csb
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.66.249
+#   sftp calee0219@140.113.66.249
 #else
-#	ssh -X calee0219@140.113.66.249
+#   ssh -X calee0219@140.113.66.249
 #fi' | sudo tee /usr/local/bin/toolbox
 #echo '#!/bin/sh
 #
