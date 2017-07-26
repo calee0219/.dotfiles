@@ -1,35 +1,40 @@
 #!/bin/bash
 
+sudo -H pip install --upgrade pip
+sudo -H pip3 install --upgrade pip
+
 # pip3
-pip3 install pandas
-pip3 install numpy
-pip3 install scipy
-pip3 install sklearn
-pip3 install jupyter
-pip3 install ipyparallel
-pip3 install jupyterhub
-pip3 install tensorflow
-pip3 install tensorflow-gpu
+sudo -H pip3 install pandas
+sudo -H pip3 install numpy
+sudo -H pip3 install scipy
+sudo -H pip3 install sklearn
+sudo -H pip3 install jupyter
+sudo -H pip3 install ipyparallel
+sudo -H pip3 install jupyterhub
+sudo -H pip3 install tensorflow
+sudo -H pip3 install tensorflow-gpu
+sudo -H pip3 install numpy scipy matplotlib ipython jupyter pandas sympy nose
 ## visualize
-pip3 install matplotlib
-pip3 install seaborn
-pip3 install graphviz
-pip3 install pygal
-pip3 install plotly
+sudo -H pip3 install matplotlib
+sudo -H pip3 install seaborn
+sudo -H pip3 install graphviz
+sudo -H pip3 install pygal
+sudo -H pip3 install plotly
 
 # pip
-pip install pandas
-pip install numpy
-pip install scipy
-pip install sklearn
-pip install jupyter
-pip install ipyparallel
-pip install jupyterhub
-pip install tensorflow
-pip install tensorflow-gpu
+sudo -H pip install pandas
+sudo -H pip install numpy
+sudo -H pip install scipy
+sudo -H pip install sklearn
+sudo -H pip install jupyter
+sudo -H pip install ipyparallel
+sudo -H pip install jupyterhub
+sudo -H pip install tensorflow
+sudo -H pip install tensorflow-gpu
 ## visualize
-pip install matplotlib
-pip install seaborn
-pip install graphviz
-pip install pygal
-pip install plotly
+sudo -H pip install matplotlib
+sudo -H pip install seaborn
+sudo -H pip install graphviz
+sudo -H pip install pygal
+sudo -H pip install plotly
+sudo -H pip install numpy scipy matplotlib ipython jupyter pandas sympy nose

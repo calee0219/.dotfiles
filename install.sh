@@ -2,7 +2,7 @@
 
 # checking Linux OS
 if which apt-get >/dev/null 2>&1; then
-    app='sudo apt-get install'
+    app='sudo apt install'
 elif which dnf >/dev/null 2>&1; then
     app='sudo dnf install --best --allowerasing'
 elif which pacman >/dev/null 2>&1; then
@@ -22,6 +22,7 @@ cd ~/.dotfiles/tmux
 git submodule init
 git submodule update
 cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
+git pull origin master
 yes | $app cmake
 cmake .
 make

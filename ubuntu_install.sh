@@ -1,7 +1,7 @@
 #!/bin/bash
 #################################################################
 #   This is a script for auto installing useful tool on Linux   #
-#   File name       > app_install.sh                            #
+#   File name       > ubuntu_install.sh                         #
 #   Author          > Gavin Lee                                 #
 #   E-main          > sz110010@gmail.com                        #
 #   Created Time    > 2016/04/02                                #
@@ -11,25 +11,10 @@
 if which apt-get > /dev/null 2>&1; then
     yes | sudo apt update
     yes | sudo apt upgrade
-    app='sudo apt-get install -f'
+    app='sudo apt install'
     yes | $app golang
-elif which dnf > /dev/null 2>&1; then
-    yes | sudo dnf update
-    yes | sudo dnf upgrade
-    app='sudo dnf install --best --allowerasing'
-    # language
-    yes | $app go
-    yes | $app gcc-go
-    # monitor tool
-    yes | $app lm_sensors
-    # appearance
-    yes | $app tmux-powerline
-    yes | $app vim-plugin-powerline
-	yes | $app powerline
-elif which pacman > /dev/null 2>&1; then
-    app='sudo pacman -S'
-elif which brew > /dev/null 2>&1; then
-    app='brew install'
+else
+    echo "this is not ubuntu"
 fi
 
 # editor
@@ -37,22 +22,13 @@ yes | $app vim
 yes | $app emacs
 
 # work
-yes | $app slack
 yes | $app openssh-server
 yes | $app nginx
 yes | $app virtualbox
 
-## geth
-sudo apt-get install software-properties-common
-sudo add-apt-repository -y ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install ethereum
-
 # language
 yes | $app python3
 yes | $app python3-pip
-yes | $app python-pip3
-./python_tools.sh
 yes | $app gcc
 yes | $app clang
 #yes | $app ruby
@@ -61,11 +37,9 @@ yes | $app clang
 yes | $app nodejs
 yes | $app nodejs-legacy
 yes | $app npm
-./npm_tools.sh
 
 # developer
 yes | $app ctags
-yes | $app the_silver_searcher
 yes | $app silversearcher-ag
 
 # useful tool
@@ -74,13 +48,14 @@ yes | $app tmux
 yes | $app irssi
 yes | $app shutter
 yes | $app curl
+yes | $app docker
 #yes | $app mosh
 
 # secure
-./security.sh
+#./security.sh
 
 # server
-./server_install.sh
+#./server_install.sh
 
 # monitor tool
 yes | $app htop
@@ -95,7 +70,6 @@ yes | $app glances
 # appearance
 #yes | $app gnome-tweak-tool
 
-# config
 ./install.sh
 
 # command
@@ -114,44 +88,44 @@ yes | $app glances
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.195.210
+#   sftp calee0219@140.113.195.210
 #else
-#	ssh -X calee0219@140.113.195.210
+#   ssh -X calee0219@140.113.195.210
 #fi' | sudo tee /usr/local/bin/lab
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp -P 222 calee0219@140.113.69.46
+#   sftp -P 222 calee0219@140.113.69.46
 #else
-#	ssh -X -p 222 calee0219@140.113.69.46
+#   ssh -X -p 222 calee0219@140.113.69.46
 #fi' | sudo tee /usr/local/bin/bsd
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.69.46 -P 50
+#   sftp calee0219@140.113.69.46 -P 50
 #else
-#	ssh -X calee0219@140.113.69.46 -p 50
+#   ssh -X calee0219@140.113.69.46 -p 50
 #fi' | sudo tee /usr/local/bin/ser
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@linux2.cs.nctu.edu.tw
+#   sftp calee0219@linux2.cs.nctu.edu.tw
 #else
-#	ssh -X calee0219@linux2.cs.nctu.edu.tw
+#   ssh -X calee0219@linux2.cs.nctu.edu.tw
 #fi' | sudo tee /usr/local/bin/csl
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@bsd2.cs.nctu.edu.tw
+#   sftp calee0219@bsd2.cs.nctu.edu.tw
 #else
-#	ssh -X calee0219@bsd2.cs.nctu.edu.tw
+#   ssh -X calee0219@bsd2.cs.nctu.edu.tw
 #fi' | sudo tee /usr/local/bin/csb
 #echo '#!/bin/sh
 #
 #if getopts :f op ; then
-#	sftp calee0219@140.113.66.249
+#   sftp calee0219@140.113.66.249
 #else
-#	ssh -X calee0219@140.113.66.249
+#   ssh -X calee0219@140.113.66.249
 #fi' | sudo tee /usr/local/bin/toolbox
 #echo '#!/bin/sh
 #
