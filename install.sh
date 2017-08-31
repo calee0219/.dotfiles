@@ -9,35 +9,13 @@ elif which pacman >/dev/null 2>&1; then
     app='sudo pacman -S'
 fi
 
-# git submodule
-cd ~/.dotfiles
-git submodule update --init --recursive
-#git submodule init
-#git submodule update
-
 # install tmux.conf
-ln -fs ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
-#ln -fs ~/.dotfiles/tmux ~/.tmux
-cd ~/.dotfiles/tmux
-git submodule init
-git submodule update
-cd ~/.dotfiles/tmux/vendor/tmux-mem-cpu-load
-git pull origin master
-yes | $app cmake
-cmake .
-make
-sudo make install clean
-tmux source-file ~/.tmux.conf
-cd ~/.dotfiles
-
-# install screenrc
-#ln -fs ~/.dotfiles/screenrc ~/.screenrc
 
 # install bashrc
 #ln -fs ~/.dotfiles/bashrc ~/.bashrc
 
-# install zshrc
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# install zshrc/oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install gitconfig
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
@@ -45,13 +23,6 @@ ln -fs ~/.dotfiles/gitmessage ~/.gitmessage
 
 # install vimrc
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
-#cd ~/.dotfiles/vim
-#git submodule init
-#git submodule update
-#ln -fs ~/.dotfiles/vim ~/.vim
-#rm ~/.vim/vim
-#cd ~/.dotfiles/vim
-#./install_vimrc.sh
 
 # install emacs.d
 
