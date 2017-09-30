@@ -51,7 +51,7 @@ Plug 'c9s/gsession.vim', { 'do': 'make install'}
 
 " Syntax
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -66,6 +66,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Search
 Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/grep.vim'
 
 " Git
@@ -412,3 +413,6 @@ endif
 
 " Git
 autocmd Filetype gitcommit setlocal spell textwidth=80
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'

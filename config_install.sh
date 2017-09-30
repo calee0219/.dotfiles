@@ -29,7 +29,9 @@ ln -fs alien/alien.zsh-theme
 source ~/.zshrc
 # zsh-plugin
 cd ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
+git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 cd ~/.dotfiles
 
 ## git
@@ -38,6 +40,7 @@ ln -fs ~/.dotfiles/gitmessage ~/.gitmessage
 
 ## vim
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
+ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 ## emacs
 

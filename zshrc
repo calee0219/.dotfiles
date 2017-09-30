@@ -52,8 +52,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,3 +128,5 @@ function rekali() {
 function cslinux() {
     ssh -X calee@linux5.cs.nctu.edu.tw
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
