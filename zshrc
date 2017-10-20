@@ -2,7 +2,7 @@
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.local/bin:$HOME/Library/Python/3.5/bin:$HOME/Library/Python/2.7/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/calee0219/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -103,7 +103,7 @@ function ccp() {
 }
 
 function ser() {
-    ssh -X calee0219@ssh.calee.com.tw -p 50
+    ssh -X calee0219@nctu -p 50
 }
 
 function work() {
@@ -114,19 +114,16 @@ function bamboofox() {
     ssh -X calee0219@bamboofox.cs.nctu.edu.tw
 }
 
-function rekali() {
-    if [[ $# -eq 0 ]]; then
-        ssh -X root@ssh.calee.com.tw -p 5050
-    elif [[ $# -eq 1 ]]; then
-        sftp -P 5050 root@ssh.calee.com.tw
-    else
-        echo rekali: too many arguments >&2
-        return 1
-    fi
+function nchc() {
+    ssh -X calee@nctu -p 53851
 }
 
 function cslinux() {
     ssh -X calee@linux5.cs.nctu.edu.tw
+}
+
+function tlinux() {
+    ssh -X root@tlinux34.cs.nctu.edu.tw
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
