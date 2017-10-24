@@ -1,32 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
+# remove old version
+yes | sudo apt-get remove docker docker-engine docker.io
 yes | sudo apt update
-yes | sudo apt-get install -y --no-install-recommends \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
+#  allow Docker to use the aufs storage drivers
+yes | sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
 
-yes | sudo apt-get -y --no-install-recommends install \ curl \ apt-transport-https \ ca-certificates \ curl \ software-properties-common
+# install by repo
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+# add GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+# amd64
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+# install CE
+sudo apt-get update
+sudo apt-get install docker-ce
 
-curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -
-
-sudo add-apt-repository \
-    "deb https://apt.dockerproject.org/repo/ \
-    ubuntu-$(lsb_release -cs) \
-    main"
-
-yes | sudo apt-get update
-
-yes | sudo apt-get -y install docker-engine
-
-
-apt-cache madison docker-engine
-
-docker-engine | 1.13.0-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
-docker-engine | 1.12.6-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
-docker-engine | 1.12.5-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
-docker-engine | 1.12.4-0~ubuntu-xenial | https://apt.dockerproject.org/repo ubuntu-xenial/main amd64 Packages
-
-sudo apt-get -y install docker-engine=1.13.0-0~ubuntu-xenial
-
+# add to docker group
 sudo groupadd docker
 sudo usermod -aG docker $USER
