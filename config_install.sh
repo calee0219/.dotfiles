@@ -22,11 +22,6 @@ rm -rf fonts
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -fs ~/.dotfiles/zshrc ~/.zshrc
-# theme
-cd ~/.oh-my-zsh/themes/custom/
-git clone https://github.com/eendroroy/alien.git
-ln -fs alien/alien.zsh-theme
-source ~/.zshrc
 # zsh-plugin
 cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
