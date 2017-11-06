@@ -127,3 +127,8 @@ function tlinux() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# -------------------------------------------------------------------
+# Environment
+# -------------------------------------------------------------------
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
