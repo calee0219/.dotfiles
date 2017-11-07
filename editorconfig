@@ -1,0 +1,19 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = false
+charset = utf-8
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+
+[{Makefile,makefile}]
+indent_style = tab
+
+[*.{html,htm,css,sass,js,ts}]
+indent_size = 2

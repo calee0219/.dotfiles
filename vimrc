@@ -26,6 +26,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'editorconfig/editorconfig-vim'
+Plug 'rizzatti/dash.vim'
 
 " Style
 Plug 'vim-airline/vim-airline'

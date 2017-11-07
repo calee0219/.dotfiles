@@ -38,6 +38,7 @@ ln -fs ~/.dotfiles/gitmessage ~/.gitmessage
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
 ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
-## emacs
+## editor config
+ln -fs ~/.dotfiles/editorconfig ~/.editorconfig
 
 cd ~/.dotfiles
