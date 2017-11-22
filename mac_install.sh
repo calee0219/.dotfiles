@@ -9,6 +9,8 @@ brew install git
 brew install binutils
 
 brew install vim
+brew install curl ctags
+brew install htop
 brew install cmake
 brew install golang
 brew install nodejs npm

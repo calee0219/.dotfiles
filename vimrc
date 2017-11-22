@@ -29,15 +29,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rizzatti/dash.vim'
 
 " Style
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasr/molokai'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'tomasr/molokai'
+Plug 'itchyny/lightline.vim'
+Plug 'gosukiwi/vim-atom-dark'
 
 " Operate
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 
@@ -49,12 +49,14 @@ Plug 'shougo/vimshell'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'c9s/gsession.vim', { 'do': 'make install'}
+Plug 'sirver/ultisnips'
 
 " Syntax
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --clang-completer --js-completer --go-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'w0rp/ale'
 
 " Format
 Plug 'Chiel92/vim-autoformat'
@@ -66,9 +68,14 @@ Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
 
 " Search
-Plug 'rking/ag.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/grep.vim'
+
+" Select
+Plug 'terryma/vim-multiple-cursors'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -377,43 +384,44 @@ augroup END
 "*****************************************************************************
 
 " vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+"if !exists('g:airline_symbols')
+  "let g:airline_symbols = {}
+"endif
 
-if !exists('g:airline_powerline_fonts')
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
+"if !exists('g:airline_powerline_fonts')
+  "let g:airline#extensions#tabline#left_sep = ' '
+  "let g:airline#extensions#tabline#left_alt_sep = '|'
+  "let g:airline_left_sep          = '▶'
+  "let g:airline_left_alt_sep      = '»'
+  "let g:airline_right_sep         = '◀'
+  "let g:airline_right_alt_sep     = '«'
+  "let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+  "let g:airline#extensions#readonly#symbol   = '⊘'
+  "let g:airline#extensions#linecolumn#prefix = '¶'
+  "let g:airline#extensions#paste#symbol      = 'ρ'
+  "let g:airline_symbols.linenr    = '␊'
+  "let g:airline_symbols.branch    = '⎇'
+  "let g:airline_symbols.paste     = 'ρ'
+  "let g:airline_symbols.paste     = 'Þ'
+  "let g:airline_symbols.paste     = '∥'
+  "let g:airline_symbols.whitespace = 'Ξ'
+"else
+  "let g:airline#extensions#tabline#left_sep = ''
+  "let g:airline#extensions#tabline#left_alt_sep = ''
 
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
-endif
+  "" powerline symbols
+  "let g:airline_left_sep = ''
+  "let g:airline_left_alt_sep = ''
+  "let g:airline_right_sep = ''
+  "let g:airline_right_alt_sep = ''
+  "let g:airline_symbols.branch = ''
+  "let g:airline_symbols.readonly = ''
+  "let g:airline_symbols.linenr = ''
+"endif
 
 " Git
 autocmd Filetype gitcommit setlocal spell textwidth=80
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+let g:ale_emit_conflict_warnings = 0
