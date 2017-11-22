@@ -7,8 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
-#ZSH_THEME="robbyrussell"
+#ZSH_THEME="af-magic"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -122,6 +122,10 @@ function cslinux() {
     ssh -X calee@linux5.cs.nctu.edu.tw
 }
 
+function skali() {
+    ssh -X root@kali
+}
+
 function tlinux() {
     ssh -X root@tlinux34.cs.nctu.edu.tw
 }
@@ -131,5 +135,12 @@ function tlinux() {
 # -------------------------------------------------------------------
 # Environment
 # -------------------------------------------------------------------
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
+if [[ `uname` == 'Linux' ]]
+then
+    export PATH=/opt/intel/intelpython3/bin:/opt/intel/intelpython2/bin:/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+elif [[`uname` == 'Darwin']]
+then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+fi
