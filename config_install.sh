@@ -32,7 +32,6 @@ cd ~/.dotfiles
 
 ## git
 ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
-ln -fs ~/.dotfiles/gitmessage ~/.gitmessage
 
 ## vim
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
