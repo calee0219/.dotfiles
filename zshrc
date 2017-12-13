@@ -143,13 +143,11 @@ function linode() {
 # -------------------------------------------------------------------
 # Environment
 # -------------------------------------------------------------------
-if [[ `uname` == 'Linux' ]]
-then
+if [[ `uname` == 'Linux' ]] ; then
     export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
     #export PATH=/opt/intel/intelpython3/bin:/opt/intel/intelpython2/bin${PATH:+${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-elif [[`uname` == 'Darwin']]
-then
+elif [[ `uname` == 'Darwin' ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home
     export PATH=$JAVA_HOME/bin:$PATH
 fi

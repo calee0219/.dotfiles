@@ -63,6 +63,7 @@ Plug 'w0rp/ale'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'godlygeek/tabular'
 
 " Comment
 Plug 'tpope/vim-commentary'
@@ -98,6 +99,8 @@ Plug 'vim-perl/vim-perl'
 Plug 'c9s/perlomni.vim'
 "" Python
 Plug 'davidhalter/jedi-vim'
+"" Markdown
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
