@@ -126,8 +126,16 @@ function skali() {
     ssh -X root@kali
 }
 
-function tlinux() {
-    ssh -X root@tlinux34.cs.nctu.edu.tw
+function router() {
+    ssh calee@nctu -p 5050
+}
+
+function ptt() {
+    ssh bbsu@ptt.cc
+}
+
+function linode() {
+    ssh calee@linode.calee.xyz
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -137,7 +145,8 @@ function tlinux() {
 # -------------------------------------------------------------------
 if [[ `uname` == 'Linux' ]]
 then
-    export PATH=/opt/intel/intelpython3/bin:/opt/intel/intelpython2/bin:/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+    export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+    #export PATH=/opt/intel/intelpython3/bin:/opt/intel/intelpython2/bin${PATH:+${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 elif [[`uname` == 'Darwin']]
 then

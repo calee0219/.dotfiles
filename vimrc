@@ -42,6 +42,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 
 " Shell
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shougo/vimproc'
 Plug 'shougo/vimshell'
 
@@ -85,6 +86,9 @@ Plug 'gregsexton/gitv'
 " Language
 Plug 'sheerun/vim-polyglot'
 Plug 'xuhdev/SingleCompile'
+"" C / Cpp
+Plug 'vim-scripts/c.vim'
+Plug 'vim-scripts/a.vim'
 "" Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 "" HTML
@@ -254,6 +258,14 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_cpp_compiler = 'icpc'
+let g:syntastic_cpp_checkers = ['clang++']
+let g:syntastic_cpp_compiler_options = ['-std=c++17']
+let g:syntastic_c_compiler = 'icc'
+let g:syntastic_c_checkers = ['clang']
+let g:syntastic_c_compiler_options = ['']
+let g:ycm_show_diagnostics_ui = 0 "YCM
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
