@@ -103,7 +103,7 @@ function ccp() {
 }
 
 function ser() {
-    ssh -X calee@nctu -p 50
+    ssh -X calee@calee.xyz -p 50
 }
 
 function work() {
@@ -115,7 +115,7 @@ function bamboofox() {
 }
 
 function nchc() {
-    ssh -X calee@nctu -p 53851
+    ssh -X calee@nchc.calee.com.tw -p 53851
 }
 
 function cslinux() {
@@ -127,7 +127,7 @@ function skali() {
 }
 
 function router() {
-    ssh calee@nctu -p 5050
+    ssh calee@140.113.69.45 -p 5050
 }
 
 function ptt() {
