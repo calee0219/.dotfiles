@@ -29,6 +29,8 @@ yes | $app virtualbox
 # language
 yes | $app python3
 yes | $app python3-pip
+yes | $app python
+yes | $app python-pip
 yes | $app gcc
 yes | $app clang
 #yes | $app ruby
