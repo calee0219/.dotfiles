@@ -41,6 +41,8 @@ yes | $app npm
 # developer
 yes | $app ctags
 yes | $app silversearcher-ag
+yes | $app zsh
+yes | $app cmake
 
 # useful tool
 yes | $app git
