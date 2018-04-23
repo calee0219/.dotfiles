@@ -87,7 +87,7 @@ if v:version >= 704
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 endif
-Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --clang-completer --js-completer --go-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': '~/.vim/plugged/YouCompleteMe/install.py --clang-completer' }
 "Plug 'w0rp/ale'                             " Show error on line header
 
 "" Color
