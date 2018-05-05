@@ -9,51 +9,51 @@
 
 # checking Linux OS
 if which apt-get > /dev/null 2>&1; then
-    yes | sudo apt update
-    yes | sudo apt upgrade
-    app='sudo apt install'
-    yes | $app golang
+    sudo apt update
+    sudo apt upgrade -y
+    app='sudo apt install -y'
+    $app golang
 else
     echo "this is not ubuntu"
 fi
 
 # editor
-yes | $app vim
-yes | $app emacs
+$app vim
+$app emacs
 
 # work
-yes | $app openssh-server
-yes | $app nginx
-yes | $app virtualbox
+$app openssh-server
+#$app nginx
+#$app virtualbox
 
 # language
-yes | $app python3
-yes | $app python3-pip
-yes | $app python
-yes | $app python-pip
-yes | $app gcc
-yes | $app clang
-#yes | $app ruby
+$app python3
+$app python3-pip
+$app python
+$app python-pip
+$app gcc
+$app clang
+#$app ruby
 
 # npm
-yes | $app nodejs
-yes | $app nodejs-legacy
-yes | $app npm
+#$app nodejs
+#$app nodejs-legacy
+#$app npm
 
 # developer
-yes | $app ctags
-yes | $app silversearcher-ag
-yes | $app zsh
-yes | $app cmake
+$app ctags
+$app silversearcher-ag
+$app zsh
+$app cmake
 
 # useful tool
-yes | $app git
-yes | $app tmux
-yes | $app irssi
-yes | $app shutter
-yes | $app curl
-yes | $app docker
-#yes | $app mosh
+$app git
+$app tmux
+$app irssi
+#$app shutter
+$app curl
+$app docker
+#$app mosh
 
 # secure
 #./security.sh
@@ -62,16 +62,16 @@ yes | $app docker
 #./server_install.sh
 
 # monitor tool
-yes | $app htop
-yes | $app atop
-yes | $app dstat
-yes | $app glances
-#yes | $app nmon
-#yes | $app powertop
-#yes | $app hddtemp
-#yes | $app cpufreq-utils
+$app htop
+$app atop
+#$app dstat
+#$app glances
+#$app nmon
+#$app powertop
+#$app hddtemp
+#$app cpufreq-utils
 
 # appearance
-#yes | $app gnome-tweak-tool
+#$app gnome-tweak-tool
 
 ./config_install.sh
