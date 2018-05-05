@@ -9,7 +9,12 @@
 
 sudo apt update
 sudo apt upgrade
-app='sudo apt install -y'
+app='sudo yum install -y'
+
+$app epel-release
+$app yum-utils
+$app groupinstall development
+$app https://centos7.iuscommunity.org/ius-release.rpm
 
 # editor
 $app vim
@@ -17,35 +22,28 @@ $app emacs
 
 # work
 $app openssh-server
-#$app nginx
+$app nginx
 #$app virtualbox
 
 # language
-$app python3
-$app python3-pip
+$app python36u
+$app python36u-pip
 $app python
 $app python-pip
 $app gcc
 $app clang
-$app golang
+#$app golang
 #$app ruby
-
-# npm
-#$app nodejs
-#$app nodejs-legacy
-#$app npm
 
 # developer
 $app ctags
-$app silversearcher-ag
+$app the_silver_searcher
 $app zsh
 $app cmake
 
 # useful tool
 $app git
 $app tmux
-#$app irssi
-#$app shutter
 $app curl
 $app docker
 #$app mosh
