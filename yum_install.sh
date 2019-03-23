@@ -7,8 +7,8 @@
 #   Created Time    > 2016/04/02                                #
 #################################################################
 
-sudo apt update
-sudo apt upgrade
+sudo yum update -y
+sudo yum upgrade -y
 app='sudo yum install -y'
 
 $app epel-release
@@ -22,17 +22,17 @@ $app emacs
 
 # work
 $app openssh-server
-$app nginx
+#$app nginx
 #$app virtualbox
 
 # language
-$app python36u
-$app python36u-pip
+#$app python36u
+#$app python36u-pip
 $app python
 $app python-pip
 $app gcc
 $app clang
-#$app golang
+$app go
 #$app ruby
 
 # developer
@@ -56,6 +56,8 @@ $app docker
 
 # monitor tool
 $app htop
+$app mtr
+$app ncdu
 #$app atop
 #$app dstat
 #$app glances
