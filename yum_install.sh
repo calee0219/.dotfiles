@@ -7,9 +7,14 @@
 #   Created Time    > 2016/04/02                                #
 #################################################################
 
-sudo apt update
-sudo apt upgrade
-app='sudo apt install -y'
+sudo yum update -y
+sudo yum upgrade -y
+app='sudo yum install -y'
+
+$app epel-release
+$app yum-utils
+$app groupinstall development
+$app https://centos7.iuscommunity.org/ius-release.rpm
 
 # editor
 $app vim
@@ -21,31 +26,24 @@ $app openssh-server
 #$app virtualbox
 
 # language
-$app python3
-$app python3-pip
+#$app python36u
+#$app python36u-pip
 $app python
 $app python-pip
 $app gcc
 $app clang
-$app golang
+$app go
 #$app ruby
-
-# npm
-#$app nodejs
-#$app nodejs-legacy
-#$app npm
 
 # developer
 $app ctags
-$app silversearcher-ag
+$app the_silver_searcher
 $app zsh
 $app cmake
 
 # useful tool
 $app git
 $app tmux
-#$app irssi
-#$app shutter
 $app curl
 $app docker
 #$app mosh
@@ -58,6 +56,8 @@ $app docker
 
 # monitor tool
 $app htop
+$app mtr
+$app ncdu
 #$app atop
 #$app dstat
 #$app glances
