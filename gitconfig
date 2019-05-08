@@ -27,7 +27,7 @@
 	showns = show --name-status
 	logs = log --pretty=oneline --abbrev-commit
     lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    pu = pull --no-ff
+    pu = pull --rebase
 [diff]
 	tool = vimdiff
 [difftool "sourcetree"]
