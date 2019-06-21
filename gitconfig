@@ -11,6 +11,7 @@
 	editor = vim
     pager = less -R
 	excludesfile = /Users/calee/.gitignore_global
+	autocrlf = input
 [alias]
 	ap = add --patch
     sub = reset HEAD
