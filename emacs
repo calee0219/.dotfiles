@@ -47,14 +47,14 @@
 (use-package helm
   :ensure t)
 (use-package helm-gtags)
-(use-package lsp-mode
-  :hook (XXX-mode . lsp)
-  :commands lsp)
-(use-package lsp-ui :commands lsp-ui-mode)
-(use-package company-lsp :commands company-lsp)
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-(use-package dap-mode)
+;(use-package lsp-mode
+;  :hook (XXX-mode . lsp)
+;  :commands lsp)
+;(use-package lsp-ui :commands lsp-ui-mode)
+;(use-package company-lsp :commands company-lsp)
+;(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;(use-package dap-mode)
 (use-package flycheck
   :ensure t
   :config
@@ -120,13 +120,13 @@
   :bind ("C-c s" . 'counsel-projectile-ag)
   :init
   (global-company-mode))
-(use-package undo-tree
-  :ensure t
-  :config
-  ;; autosave the undo-tree history
-  (setq undo-tree-history-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq undo-tree-auto-save-history t))
+;(use-package undo-tree
+;  :ensure t
+;  :config
+;  ;; autosave the undo-tree history
+;  (setq undo-tree-history-directory-alist
+;        `((".*" . ,temporary-file-directory)))
+;  (setq undo-tree-auto-save-history t))
 (use-package multiple-cursors
   :ensure t
   :config
