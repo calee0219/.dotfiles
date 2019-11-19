@@ -153,3 +153,12 @@ elif [[ `uname` == 'Darwin' ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home
     export PATH=$JAVA_HOME/bin:$PATH
 fi
+
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+export EDITOR='emacsclient -t -n -a ""'
+alias ec='emacsclient -c -n -a ""'
+alias et='emacsclient -t -a ""'
+ecs() { emacsclient -c -n -a emacs "/sudo::$*" }
+ets() { emacsclient -t -a emacs "/sudo::$*" }
+

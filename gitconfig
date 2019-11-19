@@ -9,14 +9,14 @@
 	status = auto
 [core]
 	editor = vim
-    pager = less -R
+	pager = less -R
 	excludesfile = /Users/calee/.gitignore_global
 	autocrlf = input
 [alias]
 	ap = add --patch
-    sub = reset HEAD
+	sub = reset HEAD
 	st = status
-    s = status -s
+	s = status -s
 	co = checkout
 	ci = commit
 	br = branch
@@ -27,8 +27,8 @@
 	shows = show --stat
 	showns = show --name-status
 	logs = log --pretty=oneline --abbrev-commit
-    lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    pu = pull --rebase
+	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	pu = pull --rebase
 [diff]
 	tool = vimdiff
 [difftool "sourcetree"]
