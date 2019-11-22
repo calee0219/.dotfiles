@@ -54,7 +54,7 @@ ZSH_THEME="gnzh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting wakatime)
 
 source $ZSH/oh-my-zsh.sh
 

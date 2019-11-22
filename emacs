@@ -1,5 +1,8 @@
-;; Seeting
+;;; package --- Summary
+;;; Commentary:
+;; Setting
 ;; Welcome message and Buffer message
+;;; Code:
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 ;; Style
@@ -41,9 +44,29 @@
   (require package))
 (setq use-package-always-ensure t)
 
+(use-package wakatime-mode
+  :init (global-wakatime-mode))
 (use-package paredit
   :ensure t)
 (use-package org)
+(use-package org-sticky-header
+  :ensure t
+  :hook (org-mode . org-sticky-header-mode)
+  :config
+  (setq-default org-sticky-header-full-path t))
+(use-package org-bullets
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode1))))
+(use-package org-projectile
+  :bind (("C-c n p" . org-projectile-project-todo-completing-read)
+         ("C-c c" . org-capture))
+  :config
+  (progn
+    (setq org-projectile-projects-file
+          "/your/path/to/an/org/file/for/storing/projects.org")
+    (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+    (push (org-projectile-project-todo-entry) org-capture-templates))
+  :ensure t)
 (use-package helm
   :ensure t)
 (use-package helm-gtags)
@@ -170,7 +193,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (go-rename go-guru go-eldoc company-go go-mode multiple-cursors undo-tree flycheck counsel swiper ivy paredit autopair helm-gtags use-package projectile neotree magit lsp-ui lsp-treemacs imenu-list helm-lsp ggtags dracula-theme dap-mode company-lsp ag))))
+    (wakatime-mode org-sticky-header counsel-projectile org-projectile org-bullets go-rename go-guru go-eldoc company-go go-mode multiple-cursors undo-tree flycheck counsel swiper ivy paredit autopair helm-gtags use-package projectile neotree magit lsp-ui lsp-treemacs imenu-list helm-lsp ggtags dracula-theme dap-mode company-lsp ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
