@@ -31,6 +31,8 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+" Others
+Plug 'wakatime/vim-wakatime'		    " WakaTime Dashboard
 " Coding Sytle
 Plug 'editorconfig/editorconfig-vim'        " This is for coding style formate
 Plug 'bronson/vim-trailing-whitespace'      " highlight all space in the last of line
