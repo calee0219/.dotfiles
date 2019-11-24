@@ -40,6 +40,9 @@ ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
 ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
+## emacs
+ln -fs ~/.dotfiles/emacsrc ~/.emacs
+
 ## editor config
 ln -fs ~/.dotfiles/editorconfig ~/.editorconfig
 

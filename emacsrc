@@ -1,0 +1,325 @@
+;;; package --- Summary
+;;
+;;; Commentary:
+;;
+;;; Code:
+
+;;
+;; Basic Setting
+;;
+;; Welcome message and Buffer message
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+;; Style
+(menu-bar-mode -1)
+(show-paren-mode t)
+(electric-pair-mode t)
+(setq-default indent-tabs-mode nil)
+(setq truncate-lines nil)
+(winner-mode t)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(global-linum-mode t)
+;;
+;; Autosave & Backup
+;;
+(defconst emacs-tmp-dir (format "%s%s%s/" temporary-file-directory "emacs" (user-uid)))
+(setq backup-directory-alist `((".*" . ,emacs-tmp-dir)))
+(setq auto-save-file-name-transforms `((".*" ,emacs-tmp-dir t)))
+(setq auto-save-list-file-prefix emacs-tmp-dir)
+(setq create-lockfiles nil)
+
+;; More Package
+(require 'package)
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (when no-ssl
+    (warn "\
+Your version of Emacs does not support SSL connections,
+which is unsafe because it allows man-in-the-middle attacks.
+There are two things you can do about this warning:
+1. Install an Emacs version that does support SSL and be safe.
+2. Remove this warning from your init file so you won't see it again."))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+
+;; Download use-package
+(dolist (package '(use-package))
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install package))
+  (require package)
+  )
+
+;; This is only needed once, near the top of the file
+(eval-when-compile
+  ;; Following line is not needed if use-package.el is in ~/.emacs.d
+  ;(add-to-list 'load-path "~/.package.el")
+  (require 'use-package))
+(setq use-package-always-ensure t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; custom-package config begin
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package diminish :ensure t)
+(use-package bind-key :ensure t)
+(use-package ag :ensure t)
+
+;;
+;; theme
+;;
+(use-package dracula-theme
+  :init
+  (load-theme 'dracula t))
+
+;;
+;; Time Counting
+;;
+(use-package wakatime-mode
+  :init (global-wakatime-mode))
+
+;;
+;; ivy mode
+;;
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode . "")
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq ivy-height 10)
+  (setq ivy-initial-inputs-alist nil)
+  (setq ivy-count-format "%d/%d")
+  (setq ivy-re-builders-alist
+        `((t . ivy--regex-ignore-order)))
+  )
+
+;;
+;; counsel
+;;
+(use-package counsel
+  :ensure t
+  :bind (("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("<f1> f" . counsel-describe-function)
+         ("<f1> v" . counsel-describe-variable)
+         ("<f2> i" . counsel-info-lookup-symbol)
+         ("<f2> u" . counsel-unicode-char)
+         ("C-c g" . counsel-git)
+         ("C-c j" . counsel-git-grep)
+         ("C-c a" . counsel-ag)
+         ("C-x l" . counsel-locate)))
+
+;;
+;; swiper
+;;
+(use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper))
+  )
+
+;;
+;; company
+;;
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode t)
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3)
+  (setq company-backends
+        '((company-files
+           company-keywords
+           company-capf
+           company-yasnippet
+           )
+          (company-abbrev company-dabbrev))))
+
+(add-hook 'emacs-lisp-mode-hook (lambda () (set (make-local-variable 'company-backends) '(company-elisp))))
+
+;;
+;; flycheck
+;;
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t)
+  )
+
+;;
+;; magit
+;;
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status))
+  )
+
+;;
+;; auto insert
+;;
+(use-package autoinsert
+  :ensure t
+  :config
+  (setq auto-insert-query nil)
+  (setq auto-insert-directory (locate-user-emacs-file "template"))
+  (add-hook 'find-file-hook 'auto-insert)
+  (auto-insert-mode t)
+  )
+
+;;
+;; split window
+;;
+(use-package ace-window
+  :bind ("M-o" . ace-window))
+
+;;
+;; find
+;;
+(use-package ace-jump-mode
+  :bind ("C-." . ace-jump-mode))
+
+;;
+;; helm
+;;
+(use-package helm
+  :defer t
+  :ensure t)
+(use-package helm-gtags
+  :ensure t
+  :bind
+  (("C-h n" . helm-gtags-dwim)
+   ("C-h r" . helm-gtags-find-tag)
+   ("C-h g" . helm-gtags-find-rtag)
+   ("C-h C-t" . helm-gtags-pop-stack)
+   ("C-h /" . helm-gtags-select)
+   ("C-h l" . helm-gtags-show-stack)
+   ("C-h m" . helm-gtags-update-tags)))
+(use-package ggtags
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'c-mode-common-hook
+	    (lambda ()
+	      (when (derived-mode-p 'c-mode 'c++-mode)
+		(ggtags-mode 1)))))
+
+;;
+;; neotree
+;;
+(use-package neotree
+  :ensure t
+  :defer t
+  :bind ([f8] . 'neotree-toggle))
+
+;;
+;; variable find
+;;
+(use-package imenu-list
+  :ensure t
+  :defer t
+  :bind ([f9] . imenu-list-smart-toggle))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; custom-package config end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Language setting begin
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(semantic-mode 1)
+
+;;
+;; C
+;;
+(add-hook 'c-mode-common-hook
+	  '(lambda ()
+	     (require 'xcscope)))
+
+(if (file-exists-p "~/.dotfiles/emacs/c.el")
+    (load "~/.dotfiles/emacs/c.el"))
+
+;;
+;; lisp
+;;
+(use-package paredit
+  :ensure t)
+
+;;
+;; go
+;;
+(use-package go-mode
+  :ensure t
+  :defer t
+  :mode (("\\.go\\'" . go-mode))
+  :hook ((before-save . gofmt-before-save))
+  :config
+  (setq gofmt-command "goimports")
+  (use-package company-go
+    :ensure t
+    :config
+    (add-hook 'go-mode-hook (lambda()
+                              (add-to-list (make-local-variable 'company-backends)
+                                           '(company-go company-files company-yasnippet company-capf))))
+    )
+  (use-package go-eldoc
+    :ensure t
+    :hook (go-mode . go-eldoc-setup)
+    )
+  (use-package go-guru
+    :ensure t
+    :hook (go-mode . go-guru-hl-identifier-mode)
+    )
+  (use-package go-rename
+    :ensure t)
+  )
+
+;;
+;; text edit
+;;
+(use-package org)
+(use-package org-sticky-header
+  :ensure t
+  :defer t
+  :hook (org-mode . org-sticky-header-mode)
+  :config
+  (setq-default org-sticky-header-full-path t))
+(use-package org-bullets
+  :defer t
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(use-package org-projectile
+  :ensure t
+  :bind (("C-c n p" . org-projectile-project-todo-completing-read)
+         ("C-c c" . org-capture)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Language setting end
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (cmake-ide rtags irony-eldoc flycheck-irony company-irony company-irony-c-headers irony helm-gtags helm go-rename go-guru go-eldoc company-go go-mode neotree wakatime-mode dracula-theme ag magit flycheck company multiple-cursors counsel swiper use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(provide '.emacs)
+;;; .emacs ends here
