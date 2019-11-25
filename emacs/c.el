@@ -37,6 +37,7 @@
 
 (use-package rtags
   :ensure t
+  :bind ("M-p" . pop-tag-mark)
   :config
   (rtags-enable-standard-keybindings)
   (setq rtags-autostart-diagnostics t)
