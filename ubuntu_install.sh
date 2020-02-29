@@ -13,21 +13,21 @@ app='sudo apt install -y'
 
 # editor
 $app vim
-$app emacs
+#$app emacs
 
 # work
-$app openssh-server
+#$app openssh-server
 #$app nginx
 #$app virtualbox
 
 # language
 $app python3
 $app python3-pip
-$app python
-$app python-pip
+#$app python
+#$app python-pip
 $app gcc
 $app clang
-$app golang
+#$app golang
 #$app ruby
 
 # npm
@@ -47,7 +47,7 @@ $app tmux
 #$app irssi
 #$app shutter
 $app curl
-$app docker
+#$app docker
 #$app mosh
 
 # secure
@@ -68,5 +68,11 @@ $app htop
 
 # appearance
 #$app gnome-tweak-tool
+
+# CliAi by IBM
+git clone https://github.com/IBM/clai.git
+cd clai
+sudo env "HOME=$HOME" ./install.sh
+cd ..
 
 ./config_install.sh

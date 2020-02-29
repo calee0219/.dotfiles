@@ -12,11 +12,11 @@ ln -sf ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 
 ## powerline
 # powerline font
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
+#git clone https://github.com/powerline/fonts.git --depth=1
+#cd fonts
+#./install.sh
+#cd ..
+#rm -rf fonts
 
 ## zshrc
 # oh-my-zsh
@@ -31,6 +31,7 @@ git clone https://github.com/sobolevn/wakatime-zsh-plugin.git $ZSH_CUSTOM/plugin
 cd ~/.dotfiles
 
 ## wakatime
+pip install wakatime
 ln -fs ~/.dotfiles/wakatime.cfg ~/.wakatime.cfg
 
 ## git
@@ -38,10 +39,10 @@ ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
 
 ## vim
 ln -fs ~/.dotfiles/vimrc ~/.vimrc
-ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
+#ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
 
 ## emacs
-ln -fs ~/.dotfiles/emacsrc ~/.emacs
+#ln -fs ~/.dotfiles/emacsrc ~/.emacs
 
 ## editor config
 ln -fs ~/.dotfiles/editorconfig ~/.editorconfig
