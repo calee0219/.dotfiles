@@ -15,6 +15,8 @@ brew install cmake
 brew install golang
 brew install nodejs npm
 brew install the_silver_searcher
+brew install gpg
+brew install rust-analyzer # for Rust lsp
 npm -g install n
 sudo n latest
 npm -g install npm

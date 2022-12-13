@@ -1,7 +1,8 @@
 [user]
 	email = sz110010@gmail.com
 	name = calee0219
-	signingKey = 4AE025454E4ECDEE149CFF5279D809162552371A
+  signingKey = 42B0D0C88FCF3665B23B7703B28698579C176887
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlKWg01VSr5bAAapLoGLnF//cselLLaVYf4Vo8+bzvC
 [color]
 	ui = true
 	branch = auto
@@ -42,3 +43,8 @@
 	gpgSign = true
 [format]
 	signOff = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+

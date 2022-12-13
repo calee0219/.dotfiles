@@ -18,33 +18,35 @@ ln -sf ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 #cd ..
 #rm -rf fonts
 
-## zshrc
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -fs ~/.dotfiles/zshrc ~/.zshrc
-# zsh-plugin
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
-git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone https://github.com/sobolevn/wakatime-zsh-plugin.git $ZSH_CUSTOM/plugins/wakatime
-cd ~/.dotfiles
+# zimfw
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
+awk 'NR==21 {print "\n\
+#\n\
+# Useful tools\n\
+#\n\
+\n\
+zmodule sobolevn/wakatime-zsh-plugin"}1' ~/.zimrc > ~/.zimrc.bkg && rm ~/.zimrc && mv ~/.zimrc.bkg ~/.zimrc
+source ~/.zshrc
+zimfw install
 
 ## wakatime
-pip install wakatime
-ln -fs ~/.dotfiles/wakatime.cfg ~/.wakatime.cfg
+pip3 install -U wakatime
+ln -s ~/.dotfiles/wakatime.cfg ~/.wakatime.cfg
 
 ## git
-ln -fs ~/.dotfiles/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 
 ## vim
-ln -fs ~/.dotfiles/vimrc ~/.vimrc
+#ln -s ~/.dotfiles/vimrc ~/.vimrc
 #ln -fs ~/.dotfiles/ycm_extra_conf.py ~/.ycm_extra_conf.py
+# Just using SpaceVim
+curl -sLf https://spacevim.org/install.sh | bash
 
 ## emacs
 #ln -fs ~/.dotfiles/emacsrc ~/.emacs
 
 ## editor config
-ln -fs ~/.dotfiles/editorconfig ~/.editorconfig
+ln -s ~/.dotfiles/editorconfig ~/.editorconfig
 
 cd ~/.dotfiles
